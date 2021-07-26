@@ -1,0 +1,38 @@
+{
+  "menu": [
+    {
+      "img": "img/Tattoo-styles/scetch-mini.jpg",
+      "altimg": "vegy",
+      "title": "Скетч",
+      "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
+      "imgpos": "left",
+      "price": 1500
+    },
+    {
+      "img": "img/Tattoo-styles/minimalism-mini.jpg",
+      "altimg": "post",
+      "title": "Минимализм'",
+      "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
+      "imgpos": "top",
+      "price": 300
+    },
+    {
+      "img": "img/tabs/elite.jpg",
+      "altimg": "elite",
+      "title": "Графика",
+      "descr": "Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.",
+      "imgpos": "right",
+      "price": 1300
+    },
+    {
+      "img": "img/Tattoo-styles/miniature-mini.png",
+      "altimg": "elite",
+      "title": "Миниатюра",
+      "descr": "Ни для кого не секрет, что простота - вершина мастерства",
+      "imgpos": "top",
+      "price": 500
+    }
+  ],
+  "requests": [
+  ]
+}

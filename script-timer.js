@@ -1,0 +1,64 @@
+'use strict';
+
+//Timer
+
+window.addEventListener('DOMContentLoaded', () => {
+    const deadline = new Date('2022-04-01');
+
+    function getDifferenceOfTime(endTime) {
+        const differenceOfTime = Date.parse(endTime) - Date.parse(new Date()),
+            month = Math.floor(differenceOfTime / (1000 * 60 * 60 * 24 * 31)),
+            days = Math.floor((differenceOfTime / (1000 * 60 * 60 * 24)) % 31),
+            hours = Math.floor((differenceOfTime / (1000 * 60 * 60)) % 24),
+            minutes = Math.floor((differenceOfTime / (1000 * 60)) % 60),
+            seconds = Math.floor((differenceOfTime / 1000) % 60);
+
+        return {
+            'differenceOfTime': differenceOfTime,
+            'month': month,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
+
+    function getZero(num) {
+        if (num >= 0 && num < 10) {
+            return `0${num}`;
+        } else {
+            return num;
+        }
+    }
+
+    function changeDate(selector, endTime) {
+        const timer = document.querySelector(selector),
+            month = timer.querySelector('#month'),
+            days = timer.querySelector('#days'),
+            hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'),
+            seconds = timer.querySelector('#seconds'),
+            actionTime = setInterval(setDate, 1000),
+            action = document.querySelector('section.action');
+
+            console.log(action.clientWidth, action.clientHeight);
+
+        setDate();
+
+        function setDate() {
+            const value = getDifferenceOfTime(endTime);
+
+            month.innerHTML = getZero(value.month);
+            days.innerHTML = getZero(value.days);
+            hours.innerHTML = getZero(value.hours);
+            minutes.innerHTML = getZero(value.minutes);
+            seconds.innerHTML = getZero(value.seconds);
+
+            if (value.differenceOfTime <= 0) {
+                clearInterval(actionTime);
+            }
+        }
+    }
+
+    changeDate('.action_timer', deadline);
+});

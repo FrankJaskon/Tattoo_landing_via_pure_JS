@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Type of styles</title>
+</head>
+
+<body>
+    <div class="wrap_btn">
+        <button data-show_modal type="none" class="add_cursor-pointer buttons button-black">Связаться с нами</button>
+    </div>
+    <section class="main-wrapper">
+        <div class="wrapper-content add_relative">
+            <div class="content add_relative">
+                <div class="wrap-img">
+                    <img src="img/Tattoo-styles/miniature.jpg" class="cover">
+                </div>
+                <div class="transparentBox add_absolut"><span>Миниатюра</span> в тату – это совсем небольшой рисунок, который не
+                    бросается в глаза. Она может быть нанесена на крохотный участок тела. Чаще всего этому направлению
+                    отдают предпочтение именно девушки. Миниатюрное изображение смотрится на теле очень изящно.</div>
+            </div>
+            <div class="content add_relative">
+                <div class="wrap-img">
+                    <img src="img/Tattoo-styles/minimalism.jpg" class="cover">
+                </div>
+                <div class="transparentBox add_absolut"><span>Минимализм</span> - это лаконичный стиль, который берет своей
+                    простотой и элегантностью композиции. К особенностям стиля можно отнести геометрические формы,
+                    минимум цветов, малые масштабы. Из основных тем можно отметить - различные символы, животные, цветы,
+                    иллюстрации из книг.</div>
+            </div>
+            <div class="content add_relative">
+                <div class="wrap-img">
+                    <img src="img/Tattoo-styles/graphics.jpg" class="cover">
+                </div>
+                <div class="transparentBox add_absolut">Определить <span>Графику</span> от других стилей достаточно просто. Ее
+                    главным отличием является техника выполнения рисунка, а именно нанесение теней должно быть сделано
+                    черточками.</div>
+            </div>
+            <div class="content add_relative">
+                <div class="wrap-img">
+                    <img src="img/Tattoo-styles/scetch.jpg" class="cover gray">
+                </div>
+                <div class="transparentBox add_absolut">Если подавляющее большинство людей ассоциирует татуировку с чем-то очень
+                    ярким, объемным и четким, то стиль тату <span>Скетч</span> полностью опровергает эти понятия.</div>
+            </div>
+        </div>
+        <div class="tabs">
+            <h3 class="tabs-surtitle">Выбери свой стиль</h3>
+            <ul class="parentTabs">
+                <li class="tab add_cursor-pointer">Миниатюра</li>
+                <li class="tab add_cursor-pointer">Минимализм</li>
+                <li class="tab add_cursor-pointer">Графика</li>
+                <li class="tab add_cursor-pointer">Скетч</li>
+            </ul>
+        </div>
+    </section>
+    <div class="wrap_btn">
+        <button data-show_modal type="none" class="add_cursor-pointer buttons button-white">Связаться с нами</button>
+    </div>
+
+    <div class="wrapper__price-cards add_relative"></div>
+
+    <section class="modal-visible add_relative">
+        <div class="modal-visible_background_wrapper add_absolut">
+            <div class="modal-visible_background_img_left add_absolut"></div>
+            <div class="modal-visible_background_img_right add_absolut"></div>
+            <div class="modal-visible_background add_absolut"></div>
+        </div>
+        <form id="modal-visible_form">
+            <h3 class="modal-visible_subtitle subtitle">Закажи бесплатную консультацию нашего мастера прямо сейчас!
+            </h3>
+            <div class="modal-visible_wrapper_content flex-justify_around">
+                <div class="modal-visible_input_box dimensions-visible_buttons_inputs">
+                    <input type="text" name="name" class="decorations-input modal-visible_input" placeholder="Ваше Имя">
+                </div>
+                <div class="modal-visible_input_box dimensions-visible_buttons_inputs out-border_black">
+                    <input type="tel" name="phone" class="decorations-input modal-visible_input"
+                        placeholder="Телефонный номер" required>
+                </div>
+                <button type="submit" class="modal-visible_submit buttons button-black">Перезвонить мне</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="action">
+        <div class="action_description">
+            <h3>Первая татуировка со 50% скидкой</h3>
+            <p>Мы ценим каждого клиента и предлагаем вам стать одним из них на очень выгодных условиях.
+                Каждому, кто закажет первую татуировку до 18 августа, будет предоставлена скидка в размере
+                <span>50%!</span>
+                <br><br>
+                Акция закончится 18 августа в 00:00.
+            </p>
+        </div>
+        <div class="action_timer">
+            <h3>Осталось до конца акции:</h3>
+            <div class="timer_wrapper">
+                <div class="timer_box">
+                    <span id="month">01</span>
+                    месяцев
+                </div>
+                <div class="timer_box">
+                    <span id="days">20</span>
+                    дней
+                </div>
+                <div class="timer_box">
+                    <span id="hours">12</span>
+                    часов
+                </div>
+                <div class="timer_box">
+                    <span id="minutes">55</span>
+                    минут
+                </div>
+                <div class="timer_box">
+                    <span id="seconds">11</span>
+                    секунд
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal hide">
+        <div class="modal_box add_absolut">
+            <div class="modal_wrapper">
+                <div data-close_modal class="close_modal add_cursor-pointer add_absolut">
+                    &times;
+                </div>
+                <h3 class="modal_subtitles">Мы свяжемся с вами в кратчайшие сроки</h3>
+                <form id="modal_form">
+                    <div class="input_box padding-top_20px">
+                        <input type="text" name="name" class="decorations-input" placeholder="Введи ваше Имя" required
+                            autofocus>
+                    </div>
+                    <div class="input_box">
+                        <input type="tel" name="phone" class="decorations-input"
+                            placeholder="Телефонный номер в формате +3(80)" required>
+                    </div>
+                    <button type="submit" class="buttons uppercase button-black">Перезвонить мне</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <div class="background_box add_absolut">
+        <div class="bacground_first_half"></div>
+        <div class="bacground_second_half"></div>
+    </div>
+
+    <script src="script-tabs.js" defer></script>
+    <script src="script-timer.js" defer></script>
+    <script src="script-modal.js" defer></script>
+</body>
+
+</html>

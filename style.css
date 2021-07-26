@@ -1,0 +1,552 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+html {
+    background: #c4cfd1;
+    overflow-x: hidden;
+}
+
+.add_absolut {
+    position: absolute;
+}
+
+.add_relative {
+    position: relative;
+}
+
+::-webkit-scrollbar {
+width: 0;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+background-color: #f9f9fd;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: linear-gradient(180deg, #c4cfd1, #92c4e4);
+}
+
+.background_box {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -5;
+}
+
+.bacground_first_half {
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to left,#e5edef 50%, #f0ecec 50% 100% );
+}
+
+.bacground_second_half {
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to right,#e5edef 50%, #e8e8e8 50% 100% );
+}
+
+/* Tabs */
+
+.tabs {
+    width: 100%;
+    padding-left: 26px;
+    color: #FAFAFA;
+    background: black;
+}
+
+ul {
+    padding-left: 20px;
+    border-left: solid 2px rgb(150, 150, 150);
+}
+
+h3 {
+    text-align: left;
+    font-size: 18px;
+}
+
+li {
+    margin: 0 auto;
+    width: 75%;
+    line-height: 2;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    color: #FAFAFA;
+    font-size: 20px;
+}
+
+.main-wrapper {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 75%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.wrap-img {
+    height: 500px;
+}
+
+.cover {
+    object-fit: cover;
+    object-position: 0 40%;
+}
+
+.contain {
+    object-fit: contain;
+}
+
+.transparentBox {
+    top: 220px;
+    left: 280px;
+    height: 330px;
+    width: 480px;
+    background:#daebf3e3;
+    box-shadow: inset 0 0 1px 1px gray;
+    line-height: 2;
+    font-size: 19px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {
+    font-weight: bolder;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.tab {
+    padding: 0;
+}
+
+.transparentBox {
+    padding: 20px;
+    color: #000;
+    width: 200;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.main-wrapper {
+    box-shadow: 0 0 20px gray;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .1;} 
+    to {
+        opacity: 1;}
+}
+
+span {
+    font-weight: bolder;
+}
+
+.gray {
+    filter: grayscale(80%);
+}
+
+.tabs-surtitle {
+    padding: 30px 0;
+}
+
+/* Timer */
+
+section.action {
+    display: grid;
+    grid-template-columns: minmax(600px, auto) minmax(400px, auto);
+    grid-auto-flow: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 80%;
+    background: #daebf3;
+}
+
+section.action h3 {
+    font-size: 120%;
+    margin: 0;
+    padding: 0;
+}
+
+.action_description {
+    padding: 15px;
+    border: 1px solid #0b3447;
+}
+
+.action_timer {
+    padding: 15px;
+    background: black;
+    color: #FAFAFA;
+}
+
+.timer_wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.timer_box {
+    display: flex;
+    flex: 1;
+    width: 71px;
+    flex-direction: column;
+    padding-bottom: 5px;
+    align-items: center;
+    margin-right: 20px;
+    border: 2px solid;
+    font-size: 90%;
+}
+
+.timer_box:last-child {
+    margin-right: 0;
+}
+
+.timer_box span {
+    margin: 3px 0;
+    font-size: 300%;
+    font-weight: 500;
+}
+
+section.action p {
+    margin-top: 10px;
+}
+
+/* Buttons by modal*/
+
+.wrap_btn {
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 100px;
+}
+ 
+.buttons {
+    height: 60px;
+    width: 180px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 3px gray;
+    font-size: 110%;
+    font-weight: 600;
+}
+
+.button-white {
+    color: #000;
+    background: #FAFAFA;
+}
+
+.button-black {
+    color: #FAFAFA;;
+    background: #000;
+}
+
+.buttons:active {
+    color: #FAFAFA;
+    background: #019dff;
+}
+
+.decorations-input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    color: gray;
+    border: none;
+    box-shadow: 0 0 5px gray;
+    border-radius: 2px;
+}
+
+/* Modal */
+
+section.modal {
+    position: fixed;
+    height: 100vmin;
+    width: 100vmax;
+    top:0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal_box {
+    padding: 25px;
+    width: 450px;
+    top: 20%;
+    left: calc((100% - 400px)/2);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal_wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.close_modal {
+    top: 30px;
+    right: 20px;
+    color: gray;
+    font-size: 200%;
+    line-height: 0;
+}
+
+.padding-top_20px {
+    padding-top: 20px;
+}
+
+.close_modal:active {
+    font-size: 210%;
+}
+
+.add_cursor-pointer {
+    cursor: pointer;
+}
+
+.modal_subtitles {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+div.input_box {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 12px;
+}
+
+.modal_wrapper button {
+    width: 80%;
+    height: 50px;
+    text-transform: uppercase;
+}
+
+.tattoo__item-divider {
+    border-bottom: solid 2px rgb(165, 164, 164);
+}
+
+/* Price cards */
+
+.wrapper__price-cards {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.wrapper__price-cards::-webkit-scrollbar {
+    height: 0;
+}
+
+.box__price-card {
+    text-align: center;
+    box-shadow: 0 0 15px gray;
+    background: #eeeeee;
+    margin: 20px;
+    font-size: 19px;
+}
+
+.tattoo__item-subtitle {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.tattoo__item-subtitle:hover {
+    color: #019dff;
+}
+
+.tattoo__item-descr {
+    min-height: 30%;
+    padding: 10px;
+    line-height: 1.7;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.tattoo__item-price {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.tattoo__item-cost {
+    padding-left: 20px;
+}
+
+.tattoo__item-total {
+    padding-right: 20px;
+}
+
+.card__img-vertical {
+    height: 150px;
+}
+
+.card__img-gorizontal {
+    flex: 1;
+}
+
+.card__content-wrapper {
+    flex: 1;
+}
+
+.inversion__order-item {
+    order: 2;
+}
+
+.sliders_cards {
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    opacity: .3;
+}
+
+.sliders_cards:hover {
+    opacity: 1;
+}
+
+.slider_left {
+    left: 0;
+}
+
+.slider_right {
+    right: 0;
+}
+
+/* Modal-visible */
+
+.flex_nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-justify_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-justify_around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal-visible {
+    width: 90%;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.modal-visible_background_wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.modal-visible_background_img_left {
+    top: -70px;
+    left: -80px;
+    width: 400px;
+    height: 200px;
+    background: url(img/contant/madal-visible_subtitle_photo_left_opacity.png) no-repeat -140px 10px/ cover;
+    z-index: -1;
+}
+
+.modal-visible_background_img_right {
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 300px;
+    background: url(img/contant/madal-visible_subtitle_photo_right_opacity.png) no-repeat 150px -30px/ cover;
+    z-index: -1;
+}
+
+.modal-visible_background {
+    background: #ffffff52;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.modal-visible_subtitle {
+    flex: 1;
+}
+
+.modal-visible_wrapper_content {
+    flex: 4;
+}
+
+.modal-visible_input_box {
+    margin-right: 100px;
+    width: 280px;
+    height: 60px;
+}
+
+.modal-visible_submit {
+    width: 280px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 200%;
+    font-weight: 400;
+}
+
+.modal-visible_subtitle {
+    margin-bottom: 40px;
+}
+
+.out-border_black {
+    box-shadow: 0 0 0 2px black;
+}
+
