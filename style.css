@@ -421,15 +421,16 @@ div.input_box {
     padding-left: 20px;
 }
 
+img.top, img.right, img.bottom, img.left {
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .tattoo__item-total {
     padding-right: 20px;
 }
 
-.card__img-vertical {
-    height: 150px;
-}
-
-.card__img-gorizontal {
+.card__img {
     flex: 1;
 }
 

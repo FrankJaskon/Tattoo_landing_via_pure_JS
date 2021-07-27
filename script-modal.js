@@ -1,8 +1,45 @@
 "use strict";
 
-//  Modal
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Tabs
+
+    const wrapperContent = document.querySelector('.wrapper-content'),
+      content = wrapperContent.querySelectorAll('.content'),
+      tabs = document.querySelectorAll('.tab'),
+      parentTabs = document.querySelector('.parentTabs');
+
+      function showTab (i = 0) {
+        content[i].style.display = 'block';
+        content[i].classList.add('fade');
+        tabs[i].classList.add('active', 'fade');
+      }
+
+      function hideTabs () {
+        content.forEach((item, i) => {
+            item.style.display = 'none';
+            item.classList.remove('fade');
+            tabs[i].classList.remove('active', 'fade');
+        });
+    }
+
+    hideTabs();
+    showTab();
+
+      parentTabs.addEventListener('click', (e) => {
+        const target = e.target;
+
+        if (target && target.classList.contains('tab')) {
+            tabs.forEach((item, i) => {
+                if (item == target) {
+                    hideTabs();
+                    showTab(i);
+                }
+            });
+        }
+    });
+
+    // Modal
 
     const dataModal = document.querySelectorAll('[data-show_modal]'),
         modalBox = document.querySelector('section.modal');
@@ -139,82 +176,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Construct priceCards
 
     const wrapperForCard = document.querySelector('div.wrapper__price-cards');
-
-    class MakePriceCardVertical {
-        constructor(nameOfCard, width, height, content, price, img, ...classes) {
-            this.width = width;
-            this.height = height;
+    class MakePriceCard {
+        constructor(img, altimg, nameOfCard, content, checkingImgOrder, price, ...classes) {
             this.nameOfCard = nameOfCard;
+            this.altimg = altimg;
             this.content = content;
             this.price = price;
             this.img = img;
             this.classes = classes;
+            this.checkingImgOrder = checkingImgOrder;
         }
         render() {
             const newCard = document.createElement('div');
 
-            newCard.style.cssText = `
-                width: ${this.width};
-                height: ${this.height};
-                flex-shrink: 0;
-            `;
+            if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'left') {
+                newCard.style.cssText = `
+                    flex: 1 480px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-shrink: 0;
+                `;
+            } else if (this.checkingImgOrder === 'top' || this.checkingImgOrder === 'bottom') {
+                newCard.style.cssText = `
+                    flex: 1 250px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-shrink: 0;
+                `;
+            } else console.log('Sorry, man. Something happens');
 
-            newCard.innerHTML = `
-                <div class="card__img-vertical">
-                    <img src="img/Tattoo-styles/${this.img}" alt="${this.img}">
-                </div>
-                <h3 class="tattoo__item-subtitle add_cursor-pointer">${this.nameOfCard}</h3>
-                <div class="tattoo__item-descr">
-                    ${this.content}
-                </div>
-                <div class="tattoo__item-divider"></div>
-                <div class="tattoo__item-price">
-                    <div class="tattoo__item-cost">
-                        Цена:
-                    </div>
-                    <div class="tattoo__item-total">
-                        <span>от ${this.price}</span> грн
-                    </div>
-                </div>`;
-            if (this.classes.length === 0) {
-                this.classes[0] = 'box__price-card';
-            }
-            this.classes.forEach(item => {
-                newCard.classList.add(item);
-            });
-            wrapperForCard.append(newCard);
-        }
-    }
-
-    class MakePriceCardGorizontal {
-        constructor(nameOfCard, width, height, content, price, img, checkingOreder, ...classes) {
-            this.width = width;
-            this.height = height;
-            this.nameOfCard = nameOfCard;
-            this.content = content;
-            this.price = price;
-            this.img = img;
-            this.classes = classes;
-            this.checkingOreder = checkingOreder;
-        }
-        render() {
-            const newCard = document.createElement('div');
-
-            newCard.style.cssText = `
-                width: ${this.width};
-                height: ${this.height};
-                display: flex;
-                flex-shrink: 0;
-            `;
-            if (this.checkingOreder == 'inversion') {
+            if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'bottom') {
                 this.checkingOreder = `inversion__order-item`;
             } else {
                 this.checkingOreder = '';
             }
 
             newCard.innerHTML = `
-                <div class="card__img-gorizontal ${this.checkingOreder}">
-                    <img src="img/Tattoo-styles/${this.img}" alt="${this.img}">
+                <div class="card__img ${this.checkingImgOrder}">
+                    <img src="${this.img}" alt="${this.altimg}">
                 </div>
                 <div class="card__content-wrapper">
                     <h3 class="tattoo__item-subtitle add_cursor-pointer">${this.nameOfCard}</h3>
@@ -243,79 +242,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // const newPriceCardScetch = new MakePriceCardGorizontal(
-    //     'Скетч',
-    //     '500px',
-    //     '370px',
-    //     'Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.',
-    //     1500,
-    //     'scetch-mini.jpg',
-    //     'normal'
-    // );
-    // newPriceCardScetch.render();
-
-    // const newPriceCardMinimalism = new MakePriceCardVertical(
-    //     'Минимализм',
-    //     '300px',
-    //     '370px',
-    //     'Маленькая татуировка - минимум элементов, максимум эффектности.',
-    //     300,
-    //     'minimalism-mini.jpg'
-    // );
-    // newPriceCardMinimalism.render();
-
-    // const newPriceCardGraphics = new MakePriceCardGorizontal(
-    //     'Графика',
-    //     '500px',
-    //     '370px',
-    //     'Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.',
-    //     1300,
-    //     'graphics-mini.png',
-    //     'inversion'
-    // );
-    // newPriceCardGraphics.render();
-
-    // const newPriceCardMiniature = new MakePriceCardVertical(
-    //     'Миниатюра',
-    //     '270px',
-    //     '370px',
-    //     'Ни для кого не секрет, что простота - вершина мастерства',
-    //     500,
-    //     'miniature-mini.png'
-    // );
-    // newPriceCardMiniature.render();
+    axios.get('http://localhost:3000/menu')
+        .then((response) => {
+            response.data.forEach(({img, altimg, title, descr, imgpos, price}) => {
+                new MakePriceCard(
+                        img,
+                        altimg,
+                        title,
+                        descr,
+                        imgpos,
+                        price
+                    ).render();
+            });
+        }).then(() => {
+            addSlidersAndHeightOfBackground(wrapperForCard);
+            addRefrenceSubtitles();
+        });
 
 
-    // const newPriceCardMinimalismClone = new MakePriceCardVertical(
-    //     'Минимализм',
-    //     '300px',
-    //     '370px',
-    //     'Маленькая татуировка - минимум элементов, максимум эффектности.',
-    //     300,
-    //     'minimalism-mini.jpg'
-    // );
-    // newPriceCardMinimalismClone.render();
+    // Bind subtittles with tabs
+    
+    function addRefrenceSubtitles () {
+        const cardSubtitles = document.querySelectorAll('.tattoo__item-subtitle');
 
-    // const newPriceCardMiniatureClone = new MakePriceCardGorizontal(
-    //     'Цветы',
-    //     '510px',
-    //     '370px',
-    //     'Цветы - отличный атрибут, чтобы запечатлить их красоту навеки.',
-    //     800,
-    //     'flowers.jpg',
-    //     'inversion'
-    // );
-    // newPriceCardMiniatureClone.render();
+            cardSubtitles.forEach((item) => {
+                item.addEventListener('click', (event) => {
+                tabs.forEach((sometab, num) => {
+                    if (event.target.innerHTML === sometab.innerHTML) {
 
-    //  Add sliders for cards
+                    hideTabs(); 
+                    showTab(num);
+                    scrollIntoViewTabNumb(num);
+                    }
+                });
+            });
+            function scrollIntoViewTabNumb(i) {
+                content[i].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+    }
 
-    function addSliders(parent) {
+    //  Add height of background and sliders for cards
+
+    function addSlidersAndHeightOfBackground(parent) {
         const newSliderLeft = document.createElement('div'),
             newSliderRight = document.createElement('div');
-        // let steps = 0,
-        //     keeperScrollWidth = 0;
-
-        setTimeout(() => {
       
             checkAndShowSliders();
 
@@ -329,9 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setHeightOfBackground('background_box');
 
-        }, 80);
 
-        function checkAndShowSliders (shiftLeft = parent.scrollLeft, shiftRight = document.documentElement.offsetWidth - 175) {
+        function checkAndShowSliders (shiftLeft = parent.scrollLeft, 
+            shiftRight = document.documentElement.offsetWidth - 175) {
+                
             if (parent.scrollHeight > parent.offsetHeight || parent.scrollWidth > parent.offsetWidth) {
 
                 newSliderLeft.innerHTML = `<img src="img/icons/slider-left.png">`;
@@ -367,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 timer = setInterval(function() {
                     let timePassed = Date.now() - start;
 
-                    if (timePassed >= parent.scrollWidth - document.documentElement.offsetWidth) {
+                    if (timePassed >= document.body.offsetWidth/2) {
                         clearInterval(timer); 
                         checkAndShowSliders(parent.scrollLeft, parent.scrollLeft + document.documentElement.offsetWidth - 175);
                         return;
@@ -386,26 +361,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
     }
-    addSliders(wrapperForCard);
 
 });
-
-    //     newSliderLeft.addEventListener('mousedown', () => {
-    //         showContentWithAnimation(newSliderRight);
-    //         const countTime = setInterval(() => {
-    //             if (parent.scrollLeft > 25) {
-    //                 parent.scrollLeft = parent.scrollLeft - 4;
-    //                 steps -= 4.455;
-    //                 newSliderLeft.style.left = steps + 'px';
-    //                 newSliderRight.style.right = -steps + 'px';
-    //             } else {
-    //                 hideContent(newSliderLeft);
-    //             }
-    //         }, 12);
-    //         newSliderLeft.addEventListener('mouseup', () => {
-    //             clearInterval(countTime);
-    //         });
-    //         newSliderLeft.addEventListener('mouseout', () => {
-    //             clearInterval(countTime);
-    //         });
-    //     });
