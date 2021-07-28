@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tabs = document.querySelectorAll('.tab'),
       parentTabs = document.querySelector('.parentTabs');
 
-      function showTab (i = 0) {
+      function showTab (i = 2) {
         content[i].style.display = 'block';
         content[i].classList.add('fade');
         tabs[i].classList.add('active', 'fade');
@@ -191,24 +191,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'left') {
                 newCard.style.cssText = `
-                    flex: 1 480px;
+                    flex: 1 0 490px;
                     display: flex;
                     flex-direction: row;
-                    flex-shrink: 0;
                 `;
             } else if (this.checkingImgOrder === 'top' || this.checkingImgOrder === 'bottom') {
                 newCard.style.cssText = `
-                    flex: 1 250px;
-                    display: flex;
-                    flex-direction: column;
-                    flex-shrink: 0;
+                    flex: 1 0 270px;
                 `;
-            } else console.log('Sorry, man. Something happens');
+                newCard.classList.add('card-vertical');
+            } else console.log('Sorry, man. Something happens. Might you forgot to set up value for order of img');
 
             if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'bottom') {
-                this.checkingOreder = `inversion__order-item`;
+                this.checkingImgOrder = `inversion__order-item`;
             } else {
-                this.checkingOreder = '';
+                this.checkingImgOrder = '';
             }
 
             newCard.innerHTML = `
@@ -255,8 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     ).render();
             });
         }).then(() => {
-            addSlidersAndHeightOfBackground(wrapperForCard);
-            addRefrenceSubtitles();
+            setTimeout(() => {
+                addSlidersAndHeightOfBackground(wrapperForCard);
+                addRefrenceSubtitles();
+            }, 100);
         });
 
 
@@ -361,5 +360,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
     }
+
+    // Gallary
+
+    function addImgesDB() {
+        const images = document.querySelector('.wrapper-view_img'),
+              wrapperImages = document.querySelector('.main__wrapper_view_img'),
+              previewOfImages = document.querySelector('.wrapper-preview_imges'),
+              widthItem = window.getComputedStyle(images).width;
+
+        axios.get('http://localhost:3000/gallary')
+            .then((response) => {
+                    response.data.forEach(({img, altimg}) => {
+                        images.innerHTML += `
+                            <div class="gallary__wrap_img">
+                                <img src="${img}" alt="${altimg}">
+                            </div>
+                        `;
+                        const wrapPreviewImg = document.querySelector('.gallary__wrap_preview_img');
+                        
+                        images.style.width = response.data.length * 100 + '%';
+                        images.classList.add('add_flex');
+    
+                        wrapperImages.style.overflow ="hidden";
+    
+                        previewOfImages.innerHTML += `
+                            <div class="gallary__wrap_preview_img">
+                                <img src="${img}" alt="${altimg}">
+                            </div>
+                        `;
+                        previewOfImages.style.overflow ='hidden';
+                    });
+            });
+    }
+
+    addImgesDB();
 
 });

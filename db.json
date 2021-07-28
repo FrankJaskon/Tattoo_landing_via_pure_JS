@@ -13,7 +13,7 @@
       "altimg": "minimalism",
       "title": "Минимализм",
       "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
-      "imgpos": "bottom",
+      "imgpos": "top",
       "price": 300
     },
     {
@@ -34,5 +34,47 @@
     }
   ],
   "requests": [
+  ],
+  "gallary": [
+    {
+      "img": "img/contant/photo-1.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-2.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-3.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-4.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-5.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-6.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-7.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-8.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-9.jpg",
+      "altimg": "graphics"
+    },
+    {
+      "img": "img/contant/photo-10.jpg",
+      "altimg": "graphics"
+    }
   ]
 }

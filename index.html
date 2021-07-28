@@ -11,53 +11,82 @@
 </head>
 
 <body>
+    <header>
+        <h1>Tattoo</h1>
+    </header>
     <div class="wrap_btn">
         <button data-show_modal type="none" class="add_cursor-pointer buttons button-black">Связаться с нами</button>
     </div>
-    <section class="main-wrapper">
-        <div class="wrapper-content add_relative">
-            <div class="content add_relative">
-                <div class="wrap-img">
-                    <img src="img/Tattoo-styles/miniature.jpg" class="cover">
-                </div>
-                <div class="transparentBox add_absolut"><span>Миниатюра</span> в тату – это совсем небольшой рисунок, который не
-                    бросается в глаза. Она может быть нанесена на крохотный участок тела. Чаще всего этому направлению
-                    отдают предпочтение именно девушки. Миниатюрное изображение смотрится на теле очень изящно.</div>
+
+    <section class="gallary">
+        <h2 class="section-title subtitle">Наши работы</h2>
+        <div class="gallary__wrapper">
+            <div class="main__wrapper_view_img">
+                <div class="wrapper-view_img"></div>
             </div>
-            <div class="content add_relative">
-                <div class="wrap-img">
-                    <img src="img/Tattoo-styles/minimalism.jpg" class="cover">
+            <div class="wrapper-preview_imges add_relative">
+                <div class="gallary__slider_left add_absolut">
+                    <img src="img/icons/slider-left-blue.png">
                 </div>
-                <div class="transparentBox add_absolut"><span>Минимализм</span> - это лаконичный стиль, который берет своей
-                    простотой и элегантностью композиции. К особенностям стиля можно отнести геометрические формы,
-                    минимум цветов, малые масштабы. Из основных тем можно отметить - различные символы, животные, цветы,
-                    иллюстрации из книг.</div>
-            </div>
-            <div class="content add_relative">
-                <div class="wrap-img">
-                    <img src="img/Tattoo-styles/graphics.jpg" class="cover">
+                <div class="gallary__slider_right add_absolut">
+                    <img src="img/icons/slider-right-blue.png">
                 </div>
-                <div class="transparentBox add_absolut">Определить <span>Графику</span> от других стилей достаточно просто. Ее
-                    главным отличием является техника выполнения рисунка, а именно нанесение теней должно быть сделано
-                    черточками.</div>
-            </div>
-            <div class="content add_relative">
-                <div class="wrap-img">
-                    <img src="img/Tattoo-styles/scetch.jpg" class="cover gray">
-                </div>
-                <div class="transparentBox add_absolut">Если подавляющее большинство людей ассоциирует татуировку с чем-то очень
-                    ярким, объемным и четким, то стиль тату <span>Скетч</span> полностью опровергает эти понятия.</div>
             </div>
         </div>
-        <div class="tabs">
-            <h3 class="tabs-surtitle">Выбери свой стиль</h3>
-            <ul class="parentTabs">
-                <li class="tab add_cursor-pointer">Миниатюра</li>
-                <li class="tab add_cursor-pointer">Минимализм</li>
-                <li class="tab add_cursor-pointer">Графика</li>
-                <li class="tab add_cursor-pointer">Скетч</li>
-            </ul>
+    </section>
+
+    <section class="section-tabs add_relative">
+        <h2 class="section-title subtitle">Выбери свой стиль</h2>
+        <div class="main-wrapper">
+            <div class="wrapper-content add_relative">
+                <div class="content add_relative">
+                    <div class="wrap-img">
+                        <img src="img/Tattoo-styles/miniature.jpg" class="cover">
+                    </div>
+                    <div class="transparentBox add_absolut"><span>Миниатюра</span> в тату – это совсем небольшой рисунок, который не
+                        бросается в глаза. Она может быть нанесена на крохотный участок тела. Чаще всего этому направлению
+                        отдают предпочтение именно девушки. Миниатюрное изображение смотрится на теле очень изящно.</div>
+                </div>
+                <div class="content add_relative">
+                    <div class="wrap-img">
+                        <img src="img/Tattoo-styles/minimalism.jpg" class="cover">
+                    </div>
+                    <div class="transparentBox add_absolut"><span>Минимализм</span> - это лаконичный стиль, который берет своей
+                        простотой и элегантностью композиции. К особенностям стиля можно отнести геометрические формы,
+                        минимум цветов, малые масштабы. Из основных тем можно отметить - различные символы, животные, цветы,
+                        иллюстрации из книг.</div>
+                </div>
+                <div class="content add_relative">
+                    <div class="wrap-img">
+                        <img src="img/Tattoo-styles/graphics.jpg" class="cover">
+                    </div>
+                    <div class="transparentBox add_absolut">Определить <span>Графику</span> от других стилей достаточно просто. Ее
+                        главным отличием является техника выполнения рисунка, а именно нанесение теней должно быть сделано
+                        черточками.</div>
+                </div>
+                <div class="content add_relative">
+                    <div class="wrap-img">
+                        <img src="img/Tattoo-styles/scetch.jpg" class="cover gray">
+                    </div>
+                    <div class="transparentBox add_absolut">Если подавляющее большинство людей ассоциирует татуировку с чем-то очень
+                        ярким, объемным и четким, то стиль тату <span>Скетч</span> полностью опровергает эти понятия.</div>
+                </div>
+            </div>
+            <div class="tabs">
+                <ul class="parentTabs">
+                    <li class="tab add_cursor-pointer">Миниатюра</li>
+                    <li class="tab add_cursor-pointer">Минимализм</li>
+                    <li class="tab add_cursor-pointer">Графика</li>
+                    <li class="tab add_cursor-pointer">Скетч</li>
+                </ul>
+            </div>
         </div>
+            <!-- <div class="tabs__background_flowers add_absolut">
+                <img src="img/contant/backgorund-flowers.png">
+            </div> -->
+            <div class="tabs__background_spot add_absolut">
+                <img src="img/contant/background-spot.png">
+            </div>
     </section>
     <div class="wrap_btn">
         <button data-show_modal type="none" class="add_cursor-pointer buttons button-white">Связаться с нами</button>
@@ -78,9 +107,15 @@
                 <div class="modal-visible_input_box dimensions-visible_buttons_inputs">
                     <input type="text" name="name" class="decorations-input modal-visible_input" placeholder="Ваше Имя">
                 </div>
+                <div class="icon-tattoo_machine">
+                    <img src="img/contant/icons-tattoo.png">
+                </div>
                 <div class="modal-visible_input_box dimensions-visible_buttons_inputs out-border_black">
                     <input type="tel" name="phone" class="decorations-input modal-visible_input"
                         placeholder="Телефонный номер" required>
+                </div>
+                <div class="icon-tattoo_machine">
+                    <img src="img/contant/icons-tattoo_1.png">
                 </div>
                 <button type="submit" class="modal-visible_submit buttons button-black">Перезвонить мне</button>
             </div>
