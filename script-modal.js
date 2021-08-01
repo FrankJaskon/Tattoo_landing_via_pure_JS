@@ -402,17 +402,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 function showGallaryImg (next) {
                     const icons = document.querySelectorAll('.gallary__wrap_preview_img > img');
 
+                    let intervalOfAutoGallary = setTimeout(function showNextImg () {
+                        moveOneStepRight();
+                        intervalOfAutoGallary = setTimeout(showNextImg, 7000);
+                    }, 7000);
+
+                    window.addEventListener('visibilitychange', () => {
+                        if (document.visibilityState === 'hidden') {
+                            clearTimeout(intervalOfAutoGallary);
+                        }
+                    });
+
                     moveToImg(next, previousImg);
 
                     function addActiveStatus(next, previous) {
                         icons[previous].classList.remove('active__prev_img');
                         icons[next].classList.add('active__prev_img');
                     }
-
-                    let intervalOfAutoGallary = setTimeout(function showNextImg () {
-                        moveOneStepRight();
-                        intervalOfAutoGallary = setTimeout(showNextImg, 7000);
-                    }, 7000);
 
                     function moveToImg(next) {
                         const width = widthItem.slice(0, widthItem.length - 2),
