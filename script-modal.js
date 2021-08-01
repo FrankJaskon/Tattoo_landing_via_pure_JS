@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     flex: 1 0 270px;
                 `;
                 newCard.classList.add('card-vertical');
-            } else console.log('Sorry, man. Something happens. Might you forgot to set up value for order of img');
+            }
 
             if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'bottom') {
                 this.checkingImgOrder = `inversion__order-item`;
@@ -364,36 +364,149 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gallary
 
     function addImgesDB() {
-        const images = document.querySelector('.wrapper-view_img'),
+        const gallarySection = document.querySelector('.gallary'),
+              images = document.querySelector('.wrapper-view_img'),
               wrapperImages = document.querySelector('.main__wrapper_view_img'),
               previewOfImages = document.querySelector('.wrapper-preview_imges'),
               widthItem = window.getComputedStyle(images).width;
 
         axios.get('http://localhost:3000/gallary')
             .then((response) => {
-                    response.data.forEach(({img, altimg}) => {
-                        images.innerHTML += `
-                            <div class="gallary__wrap_img">
-                                <img src="${img}" alt="${altimg}">
-                            </div>
-                        `;
-                        const wrapPreviewImg = document.querySelector('.gallary__wrap_preview_img');
-                        
-                        images.style.width = response.data.length * 100 + '%';
-                        images.classList.add('add_flex');
+
+                images.style.width = response.data.length * 100 + '%';
+                images.classList.add('add_flex');
+                images.style.transition = '1.5s all';
+                
+                gallarySection.style.overflow = 'hidden';
+
+                let imgId = 0;
+
+                response.data.forEach(({img, altimg}) => {
+                    images.innerHTML += `
+                        <div class="gallary__wrap_img"">
+                            <img src="${img}" alt="${altimg}">
+                        </div>
+                    `;
+                    previewOfImages.innerHTML += `
+                        <div class="gallary__wrap_preview_img">
+                            <img src="${img}" alt="${altimg}" id="${'prevImg' + imgId++}">
+                        </div>
+                    `;
+                });
+
+                // let previousImg = Math.floor(Math.random() * 10);
+                let previousImg = 0;
+
+                showGallaryImg(previousImg);
+
+                function showGallaryImg (next) {
+                    const icons = document.querySelectorAll('.gallary__wrap_preview_img > img');
+
+                    moveToImg(next, previousImg);
+
+                    function addActiveStatus(next, previous) {
+                        icons[previous].classList.remove('active__prev_img');
+                        icons[next].classList.add('active__prev_img');
+                    }
+
+                    let intervalOfAutoGallary = setTimeout(function showNextImg () {
+                        moveOneStepRight();
+                        intervalOfAutoGallary = setTimeout(showNextImg, 7000);
+                    }, 7000);
+
+                    function moveToImg(next) {
+                        const width = widthItem.slice(0, widthItem.length - 2),
+                              absSlides = Math.abs(previousImg - next);
+
+                        let offset = next * width;
+
+                        if (absSlides <= 9) {
+                            images.style.transition = `${absSlides * 0.5}s all`;
+                        } else images.style.transition = '5s all';
+
+                        images.style.transform = `translateX(-${offset}px)`;
+                        addActiveStatus(next, previousImg);
+                        previousImg = next;
+                    }
+                    
+                    previewOfImages.addEventListener('click', (event) => {
+                        const target = event.target;
     
-                        wrapperImages.style.overflow ="hidden";
-    
-                        previewOfImages.innerHTML += `
-                            <div class="gallary__wrap_preview_img">
-                                <img src="${img}" alt="${altimg}">
-                            </div>
-                        `;
-                        previewOfImages.style.overflow ='hidden';
+                        if (target && target.parentElement.classList.contains('gallary__wrap_preview_img')) {
+                            const id = +target.getAttribute('id').slice(7);
+
+                            clearTimeout(intervalOfAutoGallary);
+                            next = id;
+                            moveToImg(next);
+                        }
                     });
+
+                    const arrowLeft = document.querySelector('.gallary__slider_left'),
+                          arrowRight = document.querySelector('.gallary__slider_right');
+
+                    arrowLeft.addEventListener('click', () => {
+                        clearTimeout(intervalOfAutoGallary);
+                        moveOneStepLeft();
+                    });
+                    arrowRight.addEventListener('click', () => {
+                        clearTimeout(intervalOfAutoGallary);
+                        moveOneStepRight();
+                    });
+
+                    function moveOneStepLeft() {
+                        if (next == 0) {
+                            next = icons.length - 1;
+                            moveToImg(next);
+                        } else {
+                            moveToImg(--next);
+                        }
+                    }
+
+                    function moveOneStepRight() {
+                        if (next + 1 == icons.length) {
+                            next = 0;
+                            moveToImg(next);
+                        } else {
+                            moveToImg(++next);
+                        }
+                    }
+                }
             });
     }
 
     addImgesDB();
 
 });
+
+// previewOfImages.addEventListener('click', (event) => {
+//     const target = event.target;
+
+//     if (target && target.parentElement.classList.contains('gallary__wrap_preview_img')) {
+//         const id = target.getAttribute('id').slice(7),
+//               width = widthItem.slice(0, widthItem.length - 2),
+//               icons = document.querySelectorAll('.gallary__wrap_preview_img > img');
+
+//         let offset = id * width - 1;
+
+        
+//         icons[showedItem].classList.remove('active__prev_img');
+//         target.classList.add('active__prev_img');
+        
+
+//         console.log(Math.abs(showedItem - id));
+
+//         images.style.transition = '1.5s all';
+
+//         if (Math.abs(showedItem - id) > 6) {
+//             images.style.transition = '5s all';
+//         }
+
+//         if (offset < 0) {
+//             offset = 0;
+//         }
+
+//         images.style.transform = `translateX(-${offset}px)`;
+//         showedItem = id;
+//     }
+
+// });
