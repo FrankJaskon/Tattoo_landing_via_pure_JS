@@ -1,44 +1,6 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Tabs
-
-    const wrapperContent = document.querySelector('.wrapper-content'),
-      content = wrapperContent.querySelectorAll('.content'),
-      tabs = document.querySelectorAll('.tab'),
-      parentTabs = document.querySelector('.parentTabs');
-
-      function showTab (i = 2) {
-        content[i].style.display = 'block';
-        content[i].classList.add('fade');
-        tabs[i].classList.add('active', 'fade');
-      }
-
-      function hideTabs () {
-        content.forEach((item, i) => {
-            item.style.display = 'none';
-            item.classList.remove('fade');
-            tabs[i].classList.remove('active', 'fade');
-        });
-    }
-
-    hideTabs();
-    showTab();
-
-      parentTabs.addEventListener('click', (e) => {
-        const target = e.target;
-
-        if (target && target.classList.contains('tab')) {
-            tabs.forEach((item, i) => {
-                if (item == target) {
-                    hideTabs();
-                    showTab(i);
-                }
-            });
-        }
-    });
-
     // Modal
 
     const dataModal = document.querySelectorAll('[data-show_modal]'),
@@ -157,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hideContent(prevModalDialog);
 
         const thanksModal = document.createElement('div');
-        thanksModal.classList.add('modal_box', 'add_absolut');
+        thanksModal.classList.add('modal_box', 'add__absolut');
         thanksModal.innerHTML = `
-            <div data-close_modal class="close_modal add_cursor-pointer add_absolut">
+            <div data-close_modal class="close_modal add_cursor-pointer add__absolut">
                 &times;
             </div>
             <h3 class="modal_subtitles">${textMessage}</h3>
@@ -175,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Construct priceCards
 
-    const wrapperForCard = document.querySelector('div.wrapper__price-cards');
+    const wrapperForCard = document.querySelector('.additional__wrapper_price-card');
     class MakePriceCard {
-        constructor(img, altimg, nameOfCard, content, checkingImgOrder, price, ...classes) {
+        constructor(img, altimg, nameOfCard, content, checkingImgOrder, price, orderNum, ...classes) {
             this.nameOfCard = nameOfCard;
             this.altimg = altimg;
             this.content = content;
@@ -185,19 +147,22 @@ document.addEventListener('DOMContentLoaded', () => {
             this.img = img;
             this.classes = classes;
             this.checkingImgOrder = checkingImgOrder;
+            this.orderNum = orderNum;
         }
         render() {
             const newCard = document.createElement('div');
 
+            console.log(this.orderNum);
+
             if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'left') {
                 newCard.style.cssText = `
-                    flex: 1 0 490px;
+                    width: 470px;
                     display: flex;
                     flex-direction: row;
                 `;
             } else if (this.checkingImgOrder === 'top' || this.checkingImgOrder === 'bottom') {
                 newCard.style.cssText = `
-                    flex: 1 0 270px;
+                    width: 270px;
                 `;
                 newCard.classList.add('card-vertical');
             }
@@ -230,34 +195,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             if (this.classes.length === 0) {
-                this.classes[0] = 'box__price-card';
+                this.classes[0] = 'box__price_card';
             }
             this.classes.forEach(item => {
                 newCard.classList.add(item);
             });
-            wrapperForCard.append(newCard);
+            {
+                const boxes = wrapperForCard.querySelectorAll('.inner__box');
+
+                for (let i = 0; i < boxes.length; i++) {
+                    if (boxes[i].querySelectorAll('.box__price_card').length != 3) {
+                        boxes[i].append(newCard);
+                        break;
+                    }
+                }
+            }
         }
     }
 
     axios.get('http://localhost:3000/menu')
         .then((response) => {
-            response.data.forEach(({img, altimg, title, descr, imgpos, price}) => {
+            const count = Math.ceil(response.data.length / 3);
+            for (let i = 0; i < count; i++) {
+                const innerBox = document.createElement('div');
+                innerBox.classList.add('inner__box');
+                wrapperForCard.append(innerBox);
+            }
+            wrapperForCard.style.width = window.getComputedStyle(wrapperForCard.querySelector('.inner__box'))
+            .width.replace(/px||em||rm/, '') * count;
+            wrapperForCard.style.transition = '1.5s all';
+
+            response.data.forEach(({img, altimg, title, descr, imgpos, price, orderNum}) => {
                 new MakePriceCard(
                         img,
                         altimg,
                         title,
                         descr,
                         imgpos,
-                        price
+                        price,
+                        orderNum
                     ).render();
             });
         }).then(() => {
             setTimeout(() => {
-                addSlidersAndHeightOfBackground(wrapperForCard);
                 addRefrenceSubtitles();
             }, 100);
+        }).then(() => {
+            scrollCards();
         });
-
 
     // Bind subtittles with tabs
     
@@ -284,97 +269,143 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    //  Add height of background and sliders for cards
+    // scroll cards animation
 
-    function addSlidersAndHeightOfBackground(parent) {
-        const newSliderLeft = document.createElement('div'),
-            newSliderRight = document.createElement('div');
-      
-            checkAndShowSliders();
+    function scrollCards() {
+        const mainWrapper = document.querySelector('.wrapper__price-cards'),
+            additionalWrapper = document.querySelector('.additional__wrapper_price-card'),
+            sliderLeft = document.querySelector('.slider_left'),
+            sliderRight = document.querySelector('.slider_right'),
+            itemsBoxes = document.querySelectorAll('.inner__box'),
+            itemWidth = window.getComputedStyle((itemsBoxes[0])).width.replace(/px|em|rm/, '');
 
-             // Height of background 
+        sliderLeft.style.transition = '1s all';
+        sliderRight.style.transition = '1s all';
 
-            function setHeightOfBackground(classOfBackground) {
-                const someBackground = document.querySelector(`.${classOfBackground}`);
+        let positionNum = 0;
 
-                someBackground.style.height = (document.documentElement.scrollHeight)  + 'px';
+        mainWrapper.addEventListener('mousedown', (event) => {
+            if (event.target && event.target.parentElement.classList.contains('sliders_cards')) {
+
+                if (event.target.parentElement.classList.contains('slider_left')) {
+                    moveLeft();
+                } else {
+                    moveRight();
+                }
             }
+        });
 
-            setHeightOfBackground('background_box');
+        moveTo();
 
+        function moveTo() {
+            const offset = positionNum * itemWidth;
+            additionalWrapper.style.transform = `translateX(-${offset}px)`;
+        }
 
-        function checkAndShowSliders (shiftLeft = parent.scrollLeft, 
-            shiftRight = document.documentElement.offsetWidth - 175) {
-                
-            if (parent.scrollHeight > parent.offsetHeight || parent.scrollWidth > parent.offsetWidth) {
+        function moveLeft() {
 
-                newSliderLeft.innerHTML = `<img src="img/icons/slider-left.png">`;
-                newSliderRight.innerHTML = `<img src="img/icons/slider-right.png">`;
-
-                newSliderLeft.classList.add('sliders_cards', 'slider_left', 'add_absolut');
-                newSliderRight.classList.add('sliders_cards', 'slider_right', 'add_absolut');
-
-                newSliderLeft.style.left = Math.floor(shiftLeft) + 'px';
-                newSliderRight.style.left = Math.floor(shiftRight) + 'px';
-
-                parent.append(newSliderLeft);
-                parent.append(newSliderRight);
+            if (positionNum != 0) {
+                positionNum--;
+            } else {
+                positionNum = (itemsBoxes.length - 1);
             }
+            moveTo();
         }
+        function moveRight() {
 
-        function moveLeft(timePassed) {
-            parent.scrollLeft = parent.scrollLeft - timePassed/10;
-        }
-        function moveRight(timePassed) {
-            parent.scrollLeft = parent.scrollLeft + timePassed/10;
-        }
-
-        function removeSliders() {
-            newSliderLeft.remove();
-            newSliderRight.remove();
-        }
-
-            parent.addEventListener('mousedown', (event) => {
-                if (event.target && event.target.parentElement.classList.contains('sliders_cards')) {
-
-                let start = Date.now(),
-                timer = setInterval(function() {
-                    let timePassed = Date.now() - start;
-
-                    if (timePassed >= document.body.offsetWidth/2) {
-                        clearInterval(timer); 
-                        checkAndShowSliders(parent.scrollLeft, parent.scrollLeft + document.documentElement.offsetWidth - 175);
-                        return;
-                    }
-                    
-                        if (event.target.parentElement.classList.contains('slider_left')) {
-                            moveLeft(timePassed);
-                        } else {
-                            moveRight(timePassed);
-                        }
-              
-
-                    removeSliders();
-
-                    }, 20);
+            if (positionNum != itemsBoxes.length - 1) {
+                positionNum++;
+            } else {
+                positionNum = 0;
             }
-          });
+            moveTo();
+        }
+        // function moveLeft() {
+        //     if (mainWrapper.scrollLeft > widthWindow) {
+        //         last = 0;
+        //         if (mainWrapper.scrollLeft > widthWindow * check) {
+        //         sliderRight.style.opacity = 1;
+        //         step++;
+        //         mainWrapper.scrollLeft = mainWrapper.scrollLeft - step;
+        //         console.log('left 1', mainWrapper.scrollLeft);
+        //         requestAnimationFrame(moveLeft);
+        //         } 
+        //     } else if (last) {
+        //         if (Math.floor(mainWrapper.scrollLeft)) {
+        //             step++;
+        //             mainWrapper.scrollLeft = mainWrapper.scrollLeft - step;
+        //             console.log('left 2', mainWrapper.scrollLeft);
+        //             requestAnimationFrame(moveLeft);
+        //         } else {
+        //             console.log('left 3', mainWrapper.scrollLeft);
+        //             sliderLeft.style.opacity = 0;
+        //         }
+        //     }
+        // }
+        // function moveRight() {
+        //     if (window.getComputedStyle(wrapperForCard) - mainWrapper.scrollLeft - widthWindow >= widthWindow) {
+        //         last = 0;
+        //         console.log('before', step);
+        //         if (mainWrapper.scrollLeft < widthWindow * check) {
+        //             sliderLeft.style.opacity = 1;
+        //             step++;
+        //             mainWrapper.scrollLeft = mainWrapper.scrollLeft + step;
+        //             console.log('right 1', mainWrapper.scrollLeft);
+        //             requestAnimationFrame(moveRight);
+        //         } 
+        //     } else if (last) {
+        //         if (Math.ceil(mainWrapper.scrollLeft + widthWindow) < window.getComputedStyle(wrapperForCard)) {
+        //             step++;
+        //             mainWrapper.scrollLeft = mainWrapper.scrollLeft + step;
+        //             console.log('right 2', mainWrapper.scrollLeft);
+        //             requestAnimationFrame(moveRight);
+        //         } else {
+        //             console.log('right 3', mainWrapper.scrollLeft);
+        //             sliderRight.style.opacity = 0;
+        //         }
+        //     } 
+        // }
+        // function moveRight() {
+        //     let check = 2;
+        //     console.log(containerAllWidth - additionalWrapper.scrollLeft - widthWindow, containerAllWidth, step, widthWindow, additionalWrapper.scrollLeft);
+        //     if (containerAllWidth - additionalWrapper.scrollLeft - widthWindow >= widthWindow) {
+        //         console.log('F', additionalWrapper.scrollLeft);
+        //         step++;
+        //         additionalWrapper.scrollLeft = additionalWrapper.scrollLeft + step;
+        //         requestAnimationFrame(moveRight);
+        //     } else if (Math.ceil(additionalWrapper.scrollLeft + widthWindow) < containerAllWidth) {
+        //         console.log('D', additionalWrapper.scrollLeft);
+        //         step++;
+        //         additionalWrapper.scrollLeft = additionalWrapper.scrollLeft + step;
+        //         requestAnimationFrame(moveRight);
+        //     }
+        // } 
     }
 
-    // Gallary
+    // intro gallary
 
-    function addImgesDB() {
-        const gallarySection = document.querySelector('.gallary'),
-              images = document.querySelector('.wrapper-view_img'),
-              wrapperImages = document.querySelector('.main__wrapper_view_img'),
-              previewOfImages = document.querySelector('.wrapper-preview_imges'),
-              widthItem = window.getComputedStyle(images).width;
+    function addImgesDB({container, content, preview}) {
+        const gallarySection = document.querySelector(container),
+              images = document.querySelector(content),
+              width = window.getComputedStyle(images).width.replace(/px|em|rm/, ''),
+              previewOfImages = document.querySelector(preview);
+
+            //   addImgesDB('.gallary', '.wrapper-view_img', '.wrapper__preview_imges');
+            //   addImgesDB(arr);
+            //   const arr = {
+            //     container: '.gallary',
+            //     content: '.wrapper-view_img',
+            //     preview: '.wrapper__preview_imges'
+            //   };
+
+
+        // Addit cards
 
         axios.get('http://localhost:3000/gallary')
             .then((response) => {
 
                 images.style.width = response.data.length * 100 + '%';
-                images.classList.add('add_flex');
+                images.classList.add('add__flex');
                 images.style.transition = '1.5s all';
                 
                 gallarySection.style.overflow = 'hidden';
@@ -389,10 +420,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     previewOfImages.innerHTML += `
                         <div class="gallary__wrap_preview_img">
-                            <img src="${img}" alt="${altimg}" id="${'prevImg' + imgId++}">
+                            <img src="${img.replace(/\./, '-mini.')}" alt="${altimg}-mini" id="${'prevImg' + imgId++}">
                         </div>
                     `;
                 });
+
+                // Add slider
 
                 // let previousImg = Math.floor(Math.random() * 10);
                 let previousImg = 0;
@@ -413,22 +446,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
 
-                    moveToImg(next, previousImg);
+                    moveToImg(next);
 
                     function addActiveStatus(next, previous) {
-                        icons[previous].classList.remove('active__prev_img');
-                        icons[next].classList.add('active__prev_img');
+                        icons[previous].parentElement.classList.remove('active__prev_img');
+                        icons[next].parentElement.classList.add('active__prev_img');
                     }
 
                     function moveToImg(next) {
-                        const width = widthItem.slice(0, widthItem.length - 2),
-                              absSlides = Math.abs(previousImg - next);
+                        const absSlides = Math.abs(previousImg - next);
 
                         let offset = next * width;
 
                         if (absSlides <= 9) {
                             images.style.transition = `${absSlides * 0.5}s all`;
-                        } else images.style.transition = '5s all';
+                        } else {
+                            images.style.transition = '5s all';
+                        }
 
                         images.style.transform = `translateX(-${offset}px)`;
                         addActiveStatus(next, previousImg);
@@ -480,7 +514,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    addImgesDB();
+    // addImgesDB();
+
+    const arr = {
+        container: '.gallary',
+        content: '.wrapper-view_img',
+        preview: '.wrapper__preview_imges'
+      };
+    addImgesDB(arr);
+              
 
 });
 

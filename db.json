@@ -6,7 +6,8 @@
       "title": "Скетч",
       "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
       "imgpos": "left",
-      "price": 1500
+      "price": 1500,
+      "orderNum": 1
     },
     {
       "img": "img/Tattoo-styles/minimalism-mini.jpg",
@@ -14,7 +15,8 @@
       "title": "Минимализм",
       "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
       "imgpos": "top",
-      "price": 300
+      "price": 300,
+      "orderNum": 2
     },
     {
       "img": "img/Tattoo-styles/graphics-mini.png",
@@ -22,7 +24,8 @@
       "title": "Графика",
       "descr": "Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.",
       "imgpos": "right",
-      "price": 1300
+      "price": 1300,
+      "orderNum": 3
     },
     {
       "img": "img/Tattoo-styles/miniature-mini.png",
@@ -30,7 +33,44 @@
       "title": "Миниатюра",
       "descr": "Ни для кого не секрет, что простота - вершина мастерства",
       "imgpos": "top",
-      "price": 500
+      "price": 500,
+      "orderNum": 4
+    },
+    {
+      "img": "img/Tattoo-styles/scetch-mini.jpg",
+      "altimg": "scetch",
+      "title": "Скетч",
+      "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
+      "imgpos": "left",
+      "price": 1500,
+      "orderNum": 5
+    },
+    {
+      "img": "img/Tattoo-styles/minimalism-mini.jpg",
+      "altimg": "minimalism",
+      "title": "Минимализм",
+      "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
+      "imgpos": "top",
+      "price": 300,
+      "orderNum": 6
+    },
+    {
+      "img": "img/Tattoo-styles/graphics-mini.png",
+      "altimg": "graphics",
+      "title": "Графика",
+      "descr": "Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.",
+      "imgpos": "right",
+      "price": 1300,
+      "orderNum": 7
+    },
+    {
+      "img": "img/Tattoo-styles/miniature-mini.png",
+      "altimg": "miniature",
+      "title": "Миниатюра",
+      "descr": "Ни для кого не секрет, что простота - вершина мастерства",
+      "imgpos": "top",
+      "price": 500,
+      "orderNum": 8
     }
   ],
   "requests": [
