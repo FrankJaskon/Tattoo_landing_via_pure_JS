@@ -1,8 +1,6 @@
-'use strict';
+function timer() {
+    //Timer
 
-//Timer
-
-window.addEventListener('DOMContentLoaded', () => {
     const deadline = new Date('2022-04-01');
 
     function getDifferenceOfTime(endTime) {
@@ -61,4 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     changeDate('.action_timer', deadline);
-});
+}
+
+export default timer;

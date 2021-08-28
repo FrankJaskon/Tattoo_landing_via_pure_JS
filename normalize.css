@@ -33,13 +33,13 @@
   }
   
   /**
-   * Correct the font size and margin on `h1` elements within `section` and
+   * Correct the font size and margin on `h1` elrements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
    */
   
   h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0.67rem 0;
   }
   
   /* Grouping content
@@ -58,12 +58,12 @@
   
   /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
+   * 2. Correct the odd `rem` font sizing in all browsers.
    */
   
   pre {
     font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-size: 1rem; /* 2 */
   }
   
   /* Text-level semantics
@@ -106,7 +106,7 @@
   kbd,
   samp {
     font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-size: 1rem; /* 2 */
   }
   
   /**
@@ -131,11 +131,11 @@
   }
   
   sub {
-    bottom: -0.25em;
+    bottom: -0.25rem;
   }
   
   sup {
-    top: -0.5em;
+    top: -0.5rem;
   }
   
   /* Embedded content
@@ -227,7 +227,7 @@
    */
   
   fieldset {
-    padding: 0.35em 0.75em 0.625em;
+    padding: 0.35rem 0.75em 0.625em;
   }
   
   /**

@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
@@ -16,7 +16,12 @@
         <section class="gallary add__relative">
             <div class="top__panel add__fixed">
                 <div class="top__panel_left">
-                    <div class="panel__left_item">
+                    <div class="panel__left_item first__item">
+                        <div class="wrap__home_icon">
+                            <a href="#">
+                                <img src="/img/icons/home.svg" alt="icon home">
+                            </a>
+                        </div>
                         г. Мариуполь, пр-т. Ленинградский 120.</div>
                     <div class="panel__left_item">
                         +38 (095) 111-51-11 +11 (068) 422-44-25 +38 (073) 331-21-94
@@ -35,7 +40,18 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#" class="nav__item_link active">Главная</a></li>
                         <li class="nav__item"><a href="#" class="nav__item_link">Наши мастера</a></li>
-                        <li class="nav__item"><a href="#" class="nav__item_link">Галерея</a></li>
+                        <ul class="nav__item">
+                            <div class="expand__more add__cursor_pointer">
+                                <a href="#" class="nav__item_link">Галерея</a>
+                                <svg class="expand__more_icon" height="18px" viewBox="0 0 24 24" width="18px">
+                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                                </svg>
+                            </div>
+                            <li class="gallary__folder"><a href="#" class="nav__item_link">Наши работы</a></li>
+                            <li class="gallary__folder"><a href="#" class="nav__item_link">Эскизы</a></li>
+                            <li class="gallary__folder"><a href="#" class="nav__item_link">Мероприятия</a></li>    
+                        </ul>
                         <li class="nav__item"><a href="#" class="nav__item_link">О нас</a></li>
                         <li class="nav__item"><a href="#" class="nav__item_link">FAQ</a></li>
                     </ul>
@@ -43,7 +59,7 @@
             </div>
             <div class="gallary__wrapper">
                 <div class="main__wrapper_view_img">
-                    <div class="wrapper-view_img"></div>
+                    <div class="wrapper__view_img"></div>
                 </div>
                 <div class="wrapper__preview_imges add__relative">
                     <div class="gallary__slider_left add__absolut swing">
@@ -59,86 +75,119 @@
 
     <div class="content__wrapper intro_text">
         <div class="content__box">
-            <h3 class="content__subtitle">
-                <span class="title">Heart Of Art</span> Мариуполь 
+            <h3 class="content__title">
+                <span class="title">Heart For Art</span> Мариуполь 
             </h3>
-            <p>
+            <p class="content__text">
                 У нас вы сможете расслабиться и получать удовольствие от работы наших профессионалов, разработки эскизов и общения с нашими тату-артистами. 
                 Наша студия - это место, в котором сотрудники заботятся об имидже и стиле своих клиентов, чтобы они выглядели впечатляюще в любой ситуации.
             </p>
-            <p>
+            <p class="content__text">
                 <span class="title">Heart Of Art</span> – это место, где вы можете отдохнуть и хорошо провести время в приятной компании.
             </p>
         </div>
         <div class="content__button">
-            <button data-show_modal type="none" class="add_cursor-pointer buttons button-black">Связаться с нами</button>
+            <button data-show_modal type="none" class="add__cursor_pointer">Связаться с нами</button>
         </div>
     </div>
 
-    <section class="section-tabs add__relative">
-        <h2 class="section-title subtitle">Выбери свой стиль</h2>
-        <div class="main-wrapper">
-            <div class="wrapper-content add__relative">
-                <div class="content add__relative">
-                    <div class="wrap-img">
-                        <img src="img/Tattoo-styles/miniature.jpg" class="cover">
+    <section class="tabs__section add__relative">
+        <div class="tabs__section_into_box">
+            <h2 class="content__title tabs__title">Выбери свой стиль</h2>
+            <div class="tabs__main_wrapper">
+                <div class="tabs__images_wrapper add__relative">
+                    <div class="tabs__content">
+                        <div class="tabs__wrap_img">
+                            <img src="img/contant/tabs/minimalism.jpg" class="cover">
+                        </div>
+                        <div class="transparent__box content__text  add__absolut"><span class="title">Минимализм</span> - это лаконичный стиль, который берет своей
+                            простотой и элегантностью композиции. К особенностям стиля можно отнести геометрические формы,
+                            минимум цветов, малые масштабы. Из основных тем можно отметить - различные символы, животные, цветы,
+                            иллюстрации из книг.</div>
                     </div>
-                    <div class="transparentBox add__absolut"><span>Миниатюра</span> в тату – это совсем небольшой рисунок, который не
-                        бросается в глаза. Она может быть нанесена на крохотный участок тела. Чаще всего этому направлению
-                        отдают предпочтение именно девушки. Миниатюрное изображение смотрится на теле очень изящно.</div>
-                </div>
-                <div class="content add__relative">
-                    <div class="wrap-img">
-                        <img src="img/Tattoo-styles/minimalism.jpg" class="cover">
+                    <div class="tabs__content">
+                        <div class="tabs__wrap_img">
+                            <img src="img/contant/tabs/miniature.jpg" class="cover">
+                        </div>
+                        <div class="transparent__box content__text add__absolut"><span class="title">Миниатюра</span> в тату – это совсем небольшой рисунок, который не
+                            бросается в глаза. Она может быть нанесена на крохотный участок тела. Чаще всего этому направлению
+                            отдают предпочтение именно девушки. Миниатюрное изображение смотрится на теле очень изящно.</div>
                     </div>
-                    <div class="transparentBox add__absolut"><span>Минимализм</span> - это лаконичный стиль, который берет своей
-                        простотой и элегантностью композиции. К особенностям стиля можно отнести геометрические формы,
-                        минимум цветов, малые масштабы. Из основных тем можно отметить - различные символы, животные, цветы,
-                        иллюстрации из книг.</div>
-                </div>
-                <div class="content add__relative">
-                    <div class="wrap-img">
-                        <img src="img/Tattoo-styles/graphics.jpg" class="cover">
+                    <div class="tabs__content">
+                        <div class="tabs__wrap_img">
+                            <img src="img/contant/tabs/graphics.jpg" class="cover">
+                        </div>
+                        <div class="transparent__box content__text  add__absolut">Отличить <span class="title">Графику</span> от других стилей достаточно просто. Ее
+                            главным отличием является техника выполнения рисунка, а именно нанесение теней должно быть сделано
+                            черточками.</div>
                     </div>
-                    <div class="transparentBox add__absolut">Отличить <span>Графику</span> от других стилей достаточно просто. Ее
-                        главным отличием является техника выполнения рисунка, а именно нанесение теней должно быть сделано
-                        черточками.</div>
-                </div>
-                <div class="content add__relative">
-                    <div class="wrap-img">
-                        <img src="img/Tattoo-styles/scetch.jpg" class="cover gray">
+                    <div class="tabs__content">
+                        <div class="tabs__wrap_img">
+                            <img src="img/contant/tabs/scetch.jpg" class="cover gray">
+                        </div>
+                        <div class="transparent__box content__text  add__absolut">Если подавляющее большинство людей ассоциирует татуировку с чем-то очень
+                            ярким, объемным и четким, то стиль тату <span class="title">Скетч</span> полностью опровергает эти понятия.</div>
                     </div>
-                    <div class="transparentBox add__absolut">Если подавляющее большинство людей ассоциирует татуировку с чем-то очень
-                        ярким, объемным и четким, то стиль тату <span>Скетч</span> полностью опровергает эти понятия.</div>
                 </div>
-            </div>
-            <div class="tabs">
-                <ul class="parentTabs">
-                    <li class="tab add_cursor-pointer">Миниатюра</li>
-                    <li class="tab add_cursor-pointer">Минимализм</li>
-                    <li class="tab add_cursor-pointer">Графика</li>
-                    <li class="tab add_cursor-pointer">Скетч</li>
-                </ul>
+                <div class="titles__tabs">
+                    <ul class="tabs__ul_wrapper">
+                        <li class="tabs_item add__cursor_pointer">Минимализм</li>
+                        <li class="tabs_item add__cursor_pointer">Миниатюра</li>
+                        <li class="tabs_item add__cursor_pointer">Графика</li>
+                        <li class="tabs_item add__cursor_pointer">Скетч</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="wrap_btn">
-        <button data-show_modal type="none" class="add_cursor-pointer buttons button-white">Связаться с нами</button>
+    <div class="content__wrapper intro_text">
+        <div class="content__box perks__box add__flex">
+            <div class="perk__item_wrap circling">
+                <h3 class="content__title">
+                    <span class="title">20 лет практики</span> 
+                </h3>
+                <div class="perk__img_wrap">
+                    <img src="/img/icons/perk.svg" alt="">
+                </div>
+            </div>
+            <div class="perk__item_wrap circling">
+                <h3 class="content__title">
+                    <span class="title">Обязательная сертификация наших мастеров в Киеве</span>
+                </h3>
+                <div class="perk__img_wrap">
+                    <img src="/img/icons/perk.svg" alt="">
+                </div>
+            </div>
+            <div class="perk__item_wrap circling">
+                <h3 class="content__title">
+                    <span class="title">Cовременное оборудование</span> 
+                </h3>
+                <div class="perk__img_wrap">
+                    <img src="/img/icons/perk.svg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="wrapper__price-cards add__relative">
-        <div class="sliders_cards slider_left add__absolut">
-            <img src="img/icons/slider-left.png">
-        </div>
-        <div class="sliders_cards slider_right add__absolut">
-            <img src="img/icons/slider-right.png">
-        </div>
-        <div class="additional__wrapper_price-card add__flex">
-        </div>
-    </div>
+    <!-- <div class="wrap_btn">
+        <button data-show_modal type="none" class="add__cursor_pointer buttons button-white">Связаться с нами</button>
+    </div> -->
 
-    <section class="modal-visible add__relative">
+    <section class="cards__section add__relative">
+        <div class="cards__wrapper add__relative">
+            <div class="cards__sliders slider__left add__absolut">
+                <img src="img/icons/slider-left.png">
+            </div>
+            <div class="cards__sliders slider__right add__absolut">
+                <img src="img/icons/slider-right.png">
+            </div>
+            <div class="cards__additional_wrapper add__flex">
+            </div>
+        </div>
+    </section>  
+
+    <!-- <section class="modal-visible add__relative">
         <div class="modal-visible_background_wrapper add__absolut">
             <div class="modal-visible_background_img_left add__absolut"></div>
             <div class="modal-visible_background_img_right add__absolut"></div>
@@ -148,15 +197,15 @@
             <h3 class="modal-visible_subtitle subtitle">Закажи бесплатную консультацию нашего мастера прямо сейчас!
             </h3>
             <div class="modal-visible_wrapper_content flex-justify_around">
-                <div class="modal-visible_input_box dimensions-visible_buttons_inputs">
-                    <input type="text" name="name" class="decorations-input modal-visible_input" placeholder="Ваше Имя">
+                <div class="modal-visible_input__box dimensions-visible_buttons_inputs">
+                    <input type="text" name="name" class="input__decoration modal-visible_input" placeholder="Ваше Имя">
                 </div>
                 <div class="icon-tattoo_machine">
                     <img src="img/contant/icons-tattoo.png">
                 </div>
-                <div class="modal-visible_input_box dimensions-visible_buttons_inputs out-border_black">
-                    <input type="tel" name="phone" class="decorations-input modal-visible_input"
-                        placeholder="Телефонный номер" required>
+                <div class="modal-visible_input__box dimensions-visible_buttons_inputs out-border_black">
+                    <input type="tel" name="phone" class="input__decoration modal-visible_input"
+                        placeholder="Телефон" required>
                 </div>
                 <div class="icon-tattoo_machine">
                     <img src="img/contant/icons-tattoo_1.png">
@@ -164,9 +213,9 @@
                 <button type="submit" class="modal-visible_submit buttons button-black">Перезвонить мне</button>
             </div>
         </form>
-    </section>
+    </section> -->
 
-    <section class="action">
+    <!-- <section class="action">
         <div class="action_description">
             <h3>Первая татуировка со 50% скидкой</h3>
             <p>Мы ценим каждого клиента и предлагаем вам стать одним из них на очень выгодных условиях.
@@ -201,33 +250,32 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="modal hide add__fixed">
-        <div class="modal_box add__absolut">
-            <div class="modal_wrapper">
-                <div data-close_modal class="close_modal add_cursor-pointer add__absolut">
+        <div class="modal__box add__absolut">
+            <div class="modal__wrapper">
+                <div data-close_modal class="close__modal add__cursor_pointer add__absolut">
                     &times;
                 </div>
-                <h3 class="modal_subtitles">Мы свяжемся с вами в кратчайшие сроки</h3>
-                <form id="modal_form">
-                    <div class="input_box padding-top_20px">
-                        <input type="text" name="name" class="decorations-input" placeholder="Введи ваше Имя" required
+                <h3 class="modal__title content__title">Мы свяжемся с вами в кратчайшие сроки</h3>
+                <form id="modal__form">
+                    <div class="input__box padding-top_20px">
+                        <input type="text" name="name" class="input__decoration" placeholder="Введи ваше Имя" required
                             autofocus>
                     </div>
-                    <div class="input_box">
-                        <input type="tel" name="phone" class="decorations-input"
-                            placeholder="Телефонный номер в формате +3(80)" required>
+                    <div class="input__box">
+                        <input type="tel" name="phone" class="input__decoration"
+                            placeholder="Телефон в формате +3(80)" required>
                     </div>
-                    <button type="submit" class="buttons uppercase button-black">Перезвонить мне</button>
+                    <button type="submit" class="content__button add__cursor_pointer">Перезвонить мне</button>
                 </form>
             </div>
         </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/script-timer.js" defer></script>
-    <script src="js/script-modal.js" defer></script>
+    <script src="js/bundle.js"></script>
 </body>
 
 </html>
