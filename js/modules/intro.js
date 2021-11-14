@@ -69,7 +69,6 @@ function intro({
 
         images.style.width = response.data.length * 100 + '%';
         images.classList.add('add__flex');
-        // images.style.transition = 'transform 1.5s linear';
 
         gallarySection.style.overflow = 'hidden';
 
@@ -152,17 +151,6 @@ function intro({
                 previousPosition = next;
             });
         }
-
-        const homeBtn = document.querySelector('.wrap__home_icon');
-
-        homeBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            gallarySection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
     });
 }
 

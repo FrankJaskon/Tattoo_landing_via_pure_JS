@@ -31,7 +31,7 @@ function tabs({
         }
 
         item.style.cssText = `
-          transition: 1.5s all;
+          transition: 1s all;
           top: ${shiftTab / 4}px;
           left: -${shiftTab}px;
 

@@ -37,9 +37,7 @@ function timer() {
             minutes = timer.querySelector('#minutes'),
             seconds = timer.querySelector('#seconds'),
             actionTime = setInterval(setDate, 1000),
-            action = document.querySelector('section.action');
-
-            console.log(action.clientWidth, action.clientHeight);
+            action = document.querySelector('.action__section');
 
         setDate();
 
@@ -56,9 +54,17 @@ function timer() {
                 clearInterval(actionTime);
             }
         }
-    }
+    changeDate('.action__timer_wrap', deadline);
 
-    changeDate('.action_timer', deadline);
 }
+
+    // setup margin bottom for staff section depending on height of fotter
+
+    const footer = document.querySelector('.footer'), 
+          footerHeight = window.getComputedStyle(footer).height,
+          timer = document.querySelector('.action__section');
+
+    timer.style.marginBottom = footerHeight;
+    }
 
 export default timer;

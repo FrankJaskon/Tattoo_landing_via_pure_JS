@@ -4,17 +4,19 @@ import tabs from './modules/tabs';
 import cards from './modules/cards';
 import modal from './modules/modal';
 import timer from './modules/timer';
+import staff from './modules/staff';
+import navigation from './modules/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
     try {
         intro({
-            container: '.gallary',
+            container: '.intro__gallary',
             content: '.wrapper__view_img',
             preview: '.wrapper__preview_imges',
             activeClass: '.active__prev_img',
-            sliderLeft: '.gallary__slider_left',
-            sliderRight: '.gallary__slider_right',
-            url: 'http://localhost:3000/gallary'
+            sliderLeft: '.intro__gallary_slider_left',
+            sliderRight: '.intro__gallary_slider_right',
+            url: 'http://localhost:3000/introGallary'
         });
     } catch(error) {
         console.log(error);
@@ -50,6 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     try {
         timer();
+    } catch(error) {
+        console.log(error);
+    }
+    try {
+        staff();
+    } catch(error) {
+        console.log(error);
+    }
+    try {
+        navigation();
     } catch(error) {
         console.log(error);
     }
