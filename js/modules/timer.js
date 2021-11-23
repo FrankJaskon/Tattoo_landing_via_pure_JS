@@ -11,14 +11,8 @@ function timer() {
             minutes = Math.floor((differenceOfTime / (1000 * 60)) % 60),
             seconds = Math.floor((differenceOfTime / 1000) % 60);
 
-        return {
-            'differenceOfTime': differenceOfTime,
-            'month': month,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };
+        return {differenceOfTime, month, days,
+            hours, minutes, seconds};
     }
 
     function getZero(num) {
@@ -54,17 +48,17 @@ function timer() {
                 clearInterval(actionTime);
             }
         }
+    }
+
     changeDate('.action__timer_wrap', deadline);
 
-}
+    // setup margin bottom for staff section depending on height of footer
 
-    // setup margin bottom for staff section depending on height of fotter
-
-    const footer = document.querySelector('.footer'), 
+    const footer = document.querySelector('.footer'),
           footerHeight = window.getComputedStyle(footer).height,
           timer = document.querySelector('.action__section');
 
     timer.style.marginBottom = footerHeight;
-    }
+}
 
 export default timer;
