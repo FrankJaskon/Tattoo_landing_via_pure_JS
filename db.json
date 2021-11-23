@@ -1,28 +1,28 @@
 {
   "menu": [
     {
-      "img": "/tree/main/img/Tattoo-styles/scetch-mini.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/Tattoo-styles/scetch-mini.jpg",
       "title": "Скетч",
       "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
       "imgpos": "left",
       "price": 1500
     },
     {
-      "img": "/tree/main/img/Tattoo-styles/minimalism-mini.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/Tattoo-styles/minimalism-mini.jpg",
       "title": "Минимализм",
       "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
       "imgpos": "top",
       "price": 300
     },
     {
-      "img": "/tree/main/img/Tattoo-styles/graphics-mini.png",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/Tattoo-styles/graphics-mini.png",
       "title": "Графика",
       "descr": "Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.",
       "imgpos": "right",
       "price": 1300
     },
     {
-      "img": "/tree/main/img/Tattoo-styles/miniature-mini.png",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/Tattoo-styles/miniature-mini.png",
       "title": "Миниатюра",
       "descr": "Ни для кого не секрет, что простота - вершина мастерства",
       "imgpos": "top",
@@ -33,43 +33,43 @@
   ],
   "introGallary": [
     {
-      "img": "/tree/main/img/contant/photo-1.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-1.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-2.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-2.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-3.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-3.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-4.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-4.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-5.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-5.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-6.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-6.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-7.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-7.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-8.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-8.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-9.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-9.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/photo-10.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-10.jpg",
       "altimg": "graphics"
     }
   ],
@@ -78,70 +78,70 @@
       "nameEng": "Laura",
       "nameRus": "Лаура",
       "description": "Профессиональный мастер – колорист. Увлекается живописью с самых ранних лет. Ее всегда вдохновляли великие художники. <br>Главным движком и вдохновением в развитии считает фразу великого Сальвадора Дали: Для начала научитесь рисовать и писать как старые мастера, а уж потом действуйте по-своему. <br><br>Главный и любимый стиль Лауры – реализм, делает любую работу в этой технике со 100% фотографичной точностью. Так же с удовольствием работает и остальных стилях и направлениях. <br><br>Во многих стилистиках цепляет сборка, фрихенд, переделать любую фотографию из интернета в лайнворк, традицию, графику, чикано – для Анастасии это интересно всегда. Как многогранно творческий человек, не только рисует в свободное время,  но и делает все, что можно делать руками: шьет, плетет, создает костюмы и различные панно.",
-      "img": "//tree/main/img/contant/staff/laura.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/staff/laura.jpg",
       "altimg": "laura"
     },
     {
       "nameEng": "Julia",
       "nameRus": "Джулия",
       "description": "Джулия  Вам точно понравится, наидобрейший человек с глубоким внутренним миром и философией, который с радостью справится с любой, поставленной Вами задачей. <br><br>Просто обожает татуировки, работает во всех направлениях, в том числе обожает самую сложную технику - реализм. Её нестандартный взгляд на цвета, формы позволяет создавать максимально гармоничные образы и формы. <br><br>Каждая её работа от души и отличается идеальной цветопередачей.",
-      "img": "//tree/main/img/contant/staff/julia.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/staff/julia.jpg",
       "altimg": "julia"
     },
     {
       "nameEng": "Denis",
       "nameRus": "Денис",
       "description": "Имеет высшее художественное образование. В рисунке предпочитает яркие краски и тщательную проработку деталей изображения, делая абсолютно любой образ неповторимым и особенным. <br><br>Мастерски владеет академическим рисунком, создает уникальные дизайны будущих татуировок. Всегда придерживается принципам: профессионализм, любовь к работе, доверие и дружественный настрой, общительность, индивидуальный подход и креативность!",
-      "img": "//tree/main/img/contant/staff/denis.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/staff/denis.jpg",
       "altimg": "denis"
     },
     {
       "nameEng": "Gregor",
       "nameRus": "Григорий",
       "description": "Воспитывался в художественной среде, с детства увлекается живописью. Еще в 10 классе сделал первую татуировку товарищу, а потом, после получения высшего художественного образования, все приняло оборот профессиональной деятельности. <br><br>Основательно подходит к разработке эскиза, работает во всех стилях, выполняя даже самые сложные и нереальные работы на высшем уровне. <br><br>Качеству исполнения работы, Вашей безопасности, стерильности и комфорту уделяет самое пристальное внимание. Невероятно предан своей работе и безгранично серьезно подходит к каждой татуировке.",
-      "img": "//tree/main/img/contant/staff/gregor.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/staff/gregor.jpg",
       "altimg": "gregor"
     }
   ],
   "workings": [
     {
-      "img": "/tree/main/img/contant/gallary/workings/0.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/workings/0.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/workings/1.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/workings/1.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/workings/2.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/workings/2.jpg",
       "altimg": "graphics"
     }
   ],
   "sketches": [
     {
-      "img": "/tree/main/img/contant/gallary/sketches/0.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/sketches/0.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/sketches/1.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/sketches/1.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/sketches/2.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/sketches/2.jpg",
       "altimg": "graphics"
     }
   ],
   "events": [
     {
-      "img": "/tree/main/img/contant/gallary/events/0.png",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/0.png",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/events/1.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/1.jpg",
       "altimg": "graphics"
     },
     {
-      "img": "/tree/main/img/contant/gallary/events/2.jpg",
+      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/2.jpg",
       "altimg": "graphics"
     }
   ]
