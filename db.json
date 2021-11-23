@@ -27,6 +27,20 @@
       "descr": "Ни для кого не секрет, что простота - вершина мастерства",
       "imgpos": "top",
       "price": 500
+    },
+    {
+      "img": "img/Tattoo-styles/scetch-mini.jpg",
+      "title": "Скетч",
+      "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
+      "imgpos": "left",
+      "price": 1500
+    },
+    {
+      "img": "img/Tattoo-styles/minimalism-mini.jpg",
+      "title": "Минимализм",
+      "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
+      "imgpos": "top",
+      "price": 300
     }
   ],
   "introGallary": [
