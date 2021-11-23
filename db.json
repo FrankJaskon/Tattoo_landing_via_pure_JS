@@ -29,8 +29,6 @@
       "price": 500
     }
   ],
-  "requests": [
-  ],
   "introGallary": [
     {
       "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/photo-1.jpg",
@@ -128,20 +126,6 @@
     },
     {
       "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/sketches/2.jpg",
-      "altimg": "graphics"
-    }
-  ],
-  "events": [
-    {
-      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/0.png",
-      "altimg": "graphics"
-    },
-    {
-      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/1.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "tattoo_first_landing_via_pure_js_html_css/img/contant/gallary/events/2.jpg",
       "altimg": "graphics"
     }
   ]
