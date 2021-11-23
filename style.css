@@ -231,8 +231,8 @@ background: linear-gradient(180deg, #c4cfd1, #92c4e4);
 
     color: #fff;
 
-    background: url(/img/contant/background/some-apartment-1.jpg);
-    background: url(/img/contant/background/some-place.jpg) no-repeat 0 50%/ cover;
+    background: url(img/contant/background/some-apartment-1.jpg);
+    background: url(img/contant/background/some-place.jpg) no-repeat 0 50%/ cover;
 }
 
 .action__description_wrap {
@@ -992,7 +992,7 @@ button {
     padding:  2rem 0 5rem;
     text-align: center;
 
-    background: url(/img/contant/background/some-artist.jpg) no-repeat 0 -400px/cover;
+    background: url(img/contant/background/some-artist.jpg) no-repeat 0 -400px/cover;
 
     z-index: 1000;
 }
@@ -1101,7 +1101,7 @@ button {
     padding:  1rem 0;
     text-align: center;
 
-    background: url(/img/contant/background/some-apartment.jpg) no-repeat 0 -400px/cover;
+    background: url(img/contant/background/some-apartment.jpg) no-repeat 0 -400px/cover;
 
     z-index: 1000;
 }
