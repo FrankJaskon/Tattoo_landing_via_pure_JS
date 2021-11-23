@@ -35,42 +35,6 @@
       "imgpos": "top",
       "price": 500,
       "orderNum": 4
-    },
-    {
-      "img": "img/Tattoo-styles/scetch-mini.jpg",
-      "altimg": "scetch",
-      "title": "Скетч",
-      "descr": "Благодаря татуировке в стиле Скетч никто не осмелится назвать тебя неоригинальным.",
-      "imgpos": "left",
-      "price": 1500,
-      "orderNum": 5
-    },
-    {
-      "img": "img/Tattoo-styles/minimalism-mini.jpg",
-      "altimg": "minimalism",
-      "title": "Минимализм",
-      "descr": "Маленькая татуировка - минимум элементов, максимум эффектности.",
-      "imgpos": "top",
-      "price": 300,
-      "orderNum": 6
-    },
-    {
-      "img": "img/Tattoo-styles/graphics-mini.png",
-      "altimg": "graphics",
-      "title": "Графика",
-      "descr": "Один из древнейших стилей, который никогда не устаривает. Лучшее выражение себя через утончённое изящество линий.",
-      "imgpos": "right",
-      "price": 1300,
-      "orderNum": 7
-    },
-    {
-      "img": "img/Tattoo-styles/miniature-mini.png",
-      "altimg": "miniature",
-      "title": "Миниатюра",
-      "descr": "Ни для кого не секрет, что простота - вершина мастерства",
-      "imgpos": "top",
-      "price": 500,
-      "orderNum": 8
     }
   ],
   "requests": [
@@ -162,26 +126,6 @@
     },
     {
       "img": "img/contant/gallary/workings/3.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "img/contant/gallary/workings/4.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "img/contant/gallary/workings/5.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "img/contant/gallary/workings/6.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "img/contant/gallary/workings/7.jpg",
-      "altimg": "graphics"
-    },
-    {
-      "img": "img/contant/gallary/workings/8.jpg",
       "altimg": "graphics"
     }
   ],

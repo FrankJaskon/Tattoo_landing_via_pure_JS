@@ -10,13 +10,13 @@ import navigation from './modules/navigation';
 document.addEventListener('DOMContentLoaded', () => {
     try {
         intro({
-            container: '.intro__gallary',
+            container: '.intro__gallery',
             content: '.wrapper__view_img',
             preview: '.wrapper__preview_imges',
             activeClass: '.active__prev_img',
-            sliderLeft: '.intro__gallary_slider_left',
-            sliderRight: '.intro__gallary_slider_right',
-            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/introGallary'
+            sliderLeft: '.intro__gallery_slider_left',
+            sliderRight: '.intro__gallery_slider_right',
+            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/db.json/introGallary'
         });
     } catch(error) {
         console.log(error);
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         tabs({
             container: '.tabs__main_wrapper',
-            contentConteiner: '.tabs__content',
-            descriptionConteiner: '.transparent__box',
+            contentContainer: '.tabs__content',
+            descriptionContainer: '.transparent__box',
             tabsListContainer: '.tabs__ul_wrapper',
             tabsName: '.tabs_item'
         });
@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     try {
         cards({
-            conteiner: '.cards__wrapper',
+            container: '.cards__wrapper',
             boxForCards: '.cards__additional_wrapper',
-            conteinerForThreeCards: '.inner__box',
+            containerForThreeCards: '.inner__box',
             sliderLeft: '.slider__left',
             sliderRight: '.slider__right',
-            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/menu',
+            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/db.json/menu',
             slidersSelector: 'cards__sliders'
         });
     } catch(error) {

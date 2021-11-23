@@ -101,7 +101,7 @@ function staff() {
         // });
 
         function addPersonInfo(personName) {
-            axios.get('https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/staff')
+            axios.get('https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/db.json/staff')
             // axios.get('http://localhost:3000/staff')
             .then(resolve => {
                 resolve.data.forEach(person => {
