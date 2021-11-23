@@ -48,7 +48,7 @@ function navigation() {
           navItemsConteiner = document.querySelector('.header__nav'),
           navItems = document.querySelectorAll('.nav__item'),
           mainHeader = document.querySelector('.main__header '),
-          introGallary = document.querySelector('.intro__gallary'),
+          introGallary = document.querySelector('.intro__gallery'),
           topPanelLeftParth = document.querySelector('.top__panel_right'),
           headerBeforeScrolling = document.querySelector('.header__before_scrolling'),
           headerAfterScrolling = document.querySelector('.header__after_scrolling'),
@@ -215,11 +215,11 @@ function navigation() {
                 // console.log(container);
 
                 if (event.target.classList.contains('gallary__workings_btn')) {
-                    addPhotoInGallary('http://localhost:3000/workings');
+                    addPhotoInGallary('https://my-json-server.typicode.com/FrankJaskon/tattoo_first_landing_via_pure_js_html_css/workings');
                 } else if (event.target.classList.contains('gallary__sketches_btn')) {
-                    addPhotoInGallary('http://localhost:3000/sketches');
+                    addPhotoInGallary('https://my-json-server.typicode.com/FrankJaskon/tattoo_first_landing_via_pure_js_html_css/sketches');
                 } else if (event.target.classList.contains('gallary__meetings_btn')) {
-                    addPhotoInGallary('http://localhost:3000/events');
+                    addPhotoInGallary('https://my-json-server.typicode.com/FrankJaskon/tattoo_first_landing_via_pure_js_html_css/events');
                 } else {
                     return;
                 }
@@ -270,7 +270,7 @@ function navigation() {
                 <div class="about__content_wrapper">
                     <h3 class="about__title content__title">О нас</h3>
                     <div class="about__img_wrapper">
-                        <img src="../../img/contant/about/our-place.jpg" alt="our place" class="about__img cover">
+                        <img src="img/contant/about/our-place.jpg" alt="our place" class="about__img cover">
                     </div>
                     <p class="content__text about__content__text">
                         <span class="title">heart for art</span>
