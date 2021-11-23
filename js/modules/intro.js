@@ -57,7 +57,7 @@ function intro({
     url
 }) {
 
-    const gallarySection = document.querySelector(container),
+    const gallerySection = document.querySelector(container),
           images = document.querySelector(content),
           width = window.getComputedStyle(images).width.replace(/px|em|rm/, ''),
           previewOfImages = document.querySelector(preview);
@@ -70,7 +70,7 @@ function intro({
         images.style.width = response.data.length * 100 + '%';
         images.classList.add('add__flex');
 
-        gallarySection.style.overflow = 'hidden';
+        gallerySection.style.overflow = 'hidden';
 
         let imgId = 0;
 
@@ -95,9 +95,9 @@ function intro({
         // let previousPosition = Math.floor(Math.random() * 10);
         let previousPosition = 0;
 
-        showGallaryImg(previousPosition);
+        showGalleryImg(previousPosition);
 
-        function showGallaryImg(next) {
+        function showGalleryImg(next) {
             const icons = document.querySelectorAll('.gallary__wrap_preview_img > img');
 
             let intervalOfAutoGallary = setTimeout(function showNextImg() {

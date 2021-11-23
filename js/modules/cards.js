@@ -1,9 +1,9 @@
 import {moveLeft, moveRight, moveTo} from "./intro";
 
 function cards({
-    conteiner,
+    container,
     boxForCards,
-    conteinerForThreeCards,
+    containerForThreeCards,
     slidersSelector,
     sliderLeft,
     sliderRight,
@@ -73,7 +73,7 @@ function cards({
                     newCard.classList.add(item);
                 });
                 {
-                    const boxes = wrapperForCard.querySelectorAll(conteinerForThreeCards);
+                    const boxes = wrapperForCard.querySelectorAll(containerForThreeCards);
 
                     for (let i = 0; i < boxes.length; i++) {
                         if (boxes[i].querySelectorAll('.box__price_card').length != 3) {
@@ -90,11 +90,11 @@ function cards({
                 const count = Math.ceil(response.data.length / 3);
                 for (let i = 0; i < count; i++) {
                     const innerBox = document.createElement('div');
-                    innerBox.classList.add(conteinerForThreeCards.replace(/\./, ''));
+                    innerBox.classList.add(containerForThreeCards.replace(/\./, ''));
                     wrapperForCard.append(innerBox);
                 }
                 wrapperForCard.style.width =
-                    window.getComputedStyle(wrapperForCard.querySelector(conteinerForThreeCards))
+                    window.getComputedStyle(wrapperForCard.querySelector(containerForThreeCards))
                     .width.replace(/px||em||rm/, '') * count;
 
                 wrapperForCard.style.transition = '1.5s all';
@@ -117,11 +117,11 @@ function cards({
         // scroll cards animation
 
         function scrollCards() {
-            const mainWrapper = document.querySelector(conteiner),
+            const mainWrapper = document.querySelector(container),
                 additionalWrapper = document.querySelector(boxForCards),
                 left = document.querySelector(sliderLeft),
                 right = document.querySelector(sliderRight),
-                itemsBoxes = document.querySelectorAll(conteinerForThreeCards),
+                itemsBoxes = document.querySelectorAll(containerForThreeCards),
                 itemWidth = window.getComputedStyle((itemsBoxes[0])).width.replace(/px|em|rm/, '');
 
             if (itemsBoxes.length > 1 && itemsBoxes) {
