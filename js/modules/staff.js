@@ -76,8 +76,8 @@ function staff() {
         conteiner.addEventListener('click', (event) => {
             const target = event.target;
 
-    
-            if (target && (target.classList.contains('intro__button') || target.classList.contains('intro__img'))) {      
+
+            if (target && (target.classList.contains('intro__button') || target.classList.contains('intro__img'))) {
                 introCard.style.display = 'none';
                 introDescription.style.display = 'none';
 
@@ -101,7 +101,8 @@ function staff() {
         // });
 
         function addPersonInfo(personName) {
-            axios.get('http://localhost:3000/staff')
+            axios.get('https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/staff')
+            // axios.get('http://localhost:3000/staff')
             .then(resolve => {
                 resolve.data.forEach(person => {
                     if (person.nameEng.toLowerCase() == personName.toLowerCase()) {
@@ -109,18 +110,18 @@ function staff() {
 
                         modalContainer.innerHTML += `
                             <div class="staff__person_modal_wrapper">
-                                <div data-close_staff_modal class="staff__person_modal_close add__cursor_pointer add__absolut">
+                                <div data-close_staff_modal class="staff__person_modal_close add__cursor_pointer add__absolute">
                                     &times;
                                 </div>
                                 <div class="staff__person_modal_content_wrap">
                                     <h3 class="content__title">
-                                        <span class="title">${person.nameRus}</span> 
+                                        <span class="title">${person.nameRus}</span>
                                     </h3>
                                     <p class="content__text">
                                         ${person.description}
                                     </p>
                                     <div class="content__button staff__person_button">
-                                        <button data-${person.nameEng}_writing type="none" 
+                                        <button data-${person.nameEng}_writing type="none"
                                                 class="add__cursor_pointer text_button">
                                             Записаться к мастеру
                                         </button>
@@ -140,14 +141,14 @@ function staff() {
                         // closeModal(modalContainer, 'data-close_staff_modal', () => removeElement(modalContainer));
                         // closeModalByEscape(modalContainer);
                     }
-                                    //     <div class="staff__person_modal_box add__absolut">
+                                    //     <div class="staff__person_modal_box add__absolute">
                 //     <div class="staff__person_modal_wrapper">
-                //         <div data-close_staff_modal class="staff__person_modal_close add__cursor_pointer add__absolut">
+                //         <div data-close_staff_modal class="staff__person_modal_close add__cursor_pointer add__absolute">
                 //             &times;
                 //         </div>
                 //         <div class="staff__person_modal_content_wrap">
                 //             <h3 class="content__title">
-                //                 <span class="title">${person.nameRus}</span> 
+                //                 <span class="title">${person.nameRus}</span>
                 //             </h3>
                 //             <p class="content__text">
                 //                 ${person.description}
@@ -228,10 +229,10 @@ export default staff;
 //     introDescription.innerHTML = `
 //     <div class="intro__description_wrapper">
 //         <h3 class="intro__staff_title content__title">
-//             <span class="title">Heart For Art</span> Мариуполь 
+//             <span class="title">Heart For Art</span> Мариуполь
 //         </h3>
 //         <p class="content__text">
-//             У нас вы сможете расслабиться и получать удовольствие от работы наших профессионалов, разработки эскизов и общения с нашими тату-артистами. 
+//             У нас вы сможете расслабиться и получать удовольствие от работы наших профессионалов, разработки эскизов и общения с нашими тату-артистами.
 //             Наша студия - это место, в котором сотрудники заботятся об имидже и стиле своих клиентов, чтобы они выглядели впечатляюще в любой ситуации.
 //         </p>
 //         <p class="content__text">
@@ -269,7 +270,7 @@ export default staff;
 //         if (target && (target.classList.contains('intro__button') || target.classList.contains('intro__img'))) {
 //             introCard.remove();
 //             introDescription.remove();
-            
+
 //             showStaffCards();
 //         } else if (target && target.classList.contains('staff__img')) {
 //             showContent(staffModal);

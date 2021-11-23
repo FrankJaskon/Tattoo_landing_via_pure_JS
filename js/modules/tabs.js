@@ -1,13 +1,13 @@
 function tabs({
   container,
-  contentConteiner,
-  descriptionConteiner,
+  contentContainer,
+  descriptionContainer,
   tabsListContainer,
   tabsName
 }) {
     const wrapperContent = document.querySelector(container),
-      content = Array.from(wrapperContent.querySelectorAll(contentConteiner)),
-      contentDescription = document.querySelectorAll(descriptionConteiner),
+      content = Array.from(wrapperContent.querySelectorAll(contentContainer)),
+      contentDescription = document.querySelectorAll(descriptionContainer),
       tabsParent = document.querySelector(tabsListContainer),
       tabs = document.querySelectorAll(tabsName);
 
@@ -22,7 +22,7 @@ function tabs({
       newContent.splice(0, i);
 
       newContent.forEach((item, num) => {
-        item.classList.add('add__absolut');
+        item.classList.add('add__absolute');
         tabs[num].classList.remove('active');
 
         if (contentDescription[num]) {
@@ -69,11 +69,11 @@ function tabs({
         }
     });
 
-    // Bind subtittles with tabs
+    // Bind subtitles with tabs
 
-    addRefrenceSubtitles ();
-        
-    function addRefrenceSubtitles () {
+    addReferenceSubtitles ();
+
+    function addReferenceSubtitles () {
       let cardSubtitles;
 
       setTimeout(() => {
@@ -81,8 +81,8 @@ function tabs({
 
         cardSubtitles.forEach((item) => {
           item.addEventListener('click', (event) => {
-          tabs.forEach((sometab, num) => {
-              if (event.target.innerHTML === sometab.innerHTML) {
+          tabs.forEach((someTab, num) => {
+              if (event.target.innerHTML === someTab.innerHTML) {
 
               shiftTabs(num);
               showTab(num);

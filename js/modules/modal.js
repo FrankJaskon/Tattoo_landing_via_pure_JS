@@ -38,21 +38,21 @@ function hideContent(modal) {
 }
 
 function viewModal(elements) {
-        
+
     elements.forEach((item) => {
         item.addEventListener('click', () => {
             const modalContainer = createModalWindow(false, '.modal');
 
             modalContainer.innerHTML = `
-                <div class="modal__box add__absolut">
-                    <div data-close_modal class="close__modal add__cursor_pointer add__absolut">
+                <div class="modal__box add__absolute">
+                    <div data-close_modal class="close__modal add__cursor_pointer add__absolute">
                         &times;
                     </div>
                     <div class="modal__wrapper">
                         <h3 class="modal__title content__title">Мы свяжемся с вами в кратчайшие сроки</h3>
                         <form id="modal__form">
                             <div class="input__box padding-top_20px">
-                                <input type="text" name="name" class="input__decoration" 
+                                <input type="text" name="name" class="input__decoration"
                                     placeholder="Введи ваше Имя" required>
                             </div>
                             <div class="input__box">
@@ -80,7 +80,7 @@ function viewModal(elements) {
             closeModal(modalContainer, 'data-close_modal', () => removeElement(modalContainer));
             closeModalByEscape(modalContainer);
 
-            // Send requests 
+            // Send requests
 
             const forms = document.querySelectorAll('form'),
                   message = {
@@ -100,7 +100,7 @@ function viewModal(elements) {
                     const statusMessage = document.createElement('img');
                     statusMessage.src = message.loading;
                     statusMessage.style.cssText = `
-                        display: block; 
+                        display: block;
                         margin: 0 auto;
                         width: 1rem;
                     `;
@@ -138,9 +138,9 @@ function viewModal(elements) {
             hideContent(prevModalDialog);
 
             const thanksModal = document.createElement('div');
-            thanksModal.classList.add('modal__box', 'add__absolut');
+            thanksModal.classList.add('modal__box', 'add__absolute');
             thanksModal.innerHTML = `
-                <div data-close_modal class="close__modal add__cursor_pointer add__absolut">
+                <div data-close_modal class="close__modal add__cursor_pointer add__absolute">
                     &times;
                 </div>
                 <h3 class="modal__title content__title">${textMessage}</h3>

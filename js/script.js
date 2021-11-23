@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             activeClass: '.active__prev_img',
             sliderLeft: '.intro__gallary_slider_left',
             sliderRight: '.intro__gallary_slider_right',
-            url: 'http://localhost:3000/introGallary'
+            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/introGallary'
         });
     } catch(error) {
         console.log(error);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             conteinerForThreeCards: '.inner__box',
             sliderLeft: '.slider__left',
             sliderRight: '.slider__right',
-            url: 'http://localhost:3000/menu',
+            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/[main|master]/db.json/menu',
             slidersSelector: 'cards__sliders'
         });
     } catch(error) {
