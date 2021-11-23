@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             activeClass: '.active__prev_img',
             sliderLeft: '.intro__gallery_slider_left',
             sliderRight: '.intro__gallery_slider_right',
-            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/db.json/introGallary'
+            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/introGallary'
         });
     } catch(error) {
         console.log(error);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             containerForThreeCards: '.inner__box',
             sliderLeft: '.slider__left',
             sliderRight: '.slider__right',
-            url: 'https://github.com/FrankJaskon/Js_tabs_sliders_calculator_modals_to_food_landing/blob/main/db.json/menu',
+            url: 'https://my-json-server.typicode.com/FrankJaskon/tattoo_first_landing_via_pure_js_html_css/menu',
             slidersSelector: 'cards__sliders'
         });
     } catch(error) {

@@ -1,5 +1,5 @@
 function moveLeft(itemPosition, itemsList, targetItem, width, previousPosition, addstatusFunction) {
-    
+
     if (itemPosition != 0) {
         if (addstatusFunction) {
             addstatusFunction(itemPosition - 1, itemPosition);
@@ -8,7 +8,7 @@ function moveLeft(itemPosition, itemsList, targetItem, width, previousPosition, 
     } else {
         if (addstatusFunction) {
             addstatusFunction(itemsList.length - 1, itemPosition);
-        }       
+        }
         itemPosition = (itemsList.length - 1);
     }
     moveTo(targetItem, itemPosition, width, previousPosition);
@@ -20,7 +20,7 @@ function moveRight(itemPosition, itemsList, targetItem, width, previousPosition,
     if (itemPosition != itemsList.length - 1) {
         if (addstatusFunction) {
             addstatusFunction(itemPosition + 1, itemPosition);
-        } 
+        }
         itemPosition++;
     } else {
         if (addstatusFunction) {
@@ -31,7 +31,7 @@ function moveRight(itemPosition, itemsList, targetItem, width, previousPosition,
     moveTo(targetItem, itemPosition, width, previousPosition);
     return itemPosition;
 }
-    
+
 function moveTo(targetItem, position, width, previousPosition) {
     const offset = position * width;
 
@@ -42,7 +42,7 @@ function moveTo(targetItem, position, width, previousPosition) {
             return;
         }
         const absSlides = Math.abs(previousPosition - position) - 1;
-        
+
         targetItem.style.transition = `${1.5 + absSlides * 0.2}s all`;
     }
 }
@@ -64,7 +64,7 @@ function intro({
 
     // Getting and showing cards
 
-    axios.get(url)
+    axios.get(url, {mode: 'cors'})
     .then((response) => {
 
         images.style.width = response.data.length * 100 + '%';

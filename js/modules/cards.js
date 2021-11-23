@@ -8,8 +8,8 @@ function cards({
     sliderLeft,
     sliderRight,
     url
-}) {      
-    
+}) {
+
     // Construct priceCard
         const wrapperForCard = document.querySelector(boxForCards);
         class MakePriceCard {
@@ -25,7 +25,7 @@ function cards({
             }
             render() {
                 const newCard = document.createElement('div');
-    
+
                 if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'left') {
                     newCard.style.cssText = `
                         width: 470px;
@@ -38,13 +38,13 @@ function cards({
                     `;
                     newCard.classList.add('card-vertical');
                 }
-    
+
                 if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'bottom') {
                     this.checkingImgOrder = `inversion__order-item`;
                 } else {
                     this.checkingImgOrder = '';
                 }
-    
+
                 newCard.innerHTML = `
                     <div class="card__img ${this.checkingImgOrder}">
                         <img src="${this.img}" alt="${this.altimg}">
@@ -64,8 +64,8 @@ function cards({
                             </div>
                         </div>
                     </div>`;
-    
-    
+
+
                 if (this.classes.length === 0) {
                     this.classes[0] = 'box__price_card';
                 }
@@ -84,8 +84,8 @@ function cards({
                 }
             }
         }
-    
-        axios.get(url)
+
+        axios.get(url, {mode: 'cors'})
             .then((response) => {
                 const count = Math.ceil(response.data.length / 3);
                 for (let i = 0; i < count; i++) {
@@ -93,12 +93,12 @@ function cards({
                     innerBox.classList.add(conteinerForThreeCards.replace(/\./, ''));
                     wrapperForCard.append(innerBox);
                 }
-                wrapperForCard.style.width = 
+                wrapperForCard.style.width =
                     window.getComputedStyle(wrapperForCard.querySelector(conteinerForThreeCards))
                     .width.replace(/px||em||rm/, '') * count;
 
                 wrapperForCard.style.transition = '1.5s all';
-    
+
                 response.data.forEach(({img, altimg, title, descr, imgpos, price, orderNum}) => {
                     new MakePriceCard(
                             img,
@@ -113,9 +113,9 @@ function cards({
             }).then(() => {
                 scrollCards();
             });
-    
+
         // scroll cards animation
-    
+
         function scrollCards() {
             const mainWrapper = document.querySelector(conteiner),
                 additionalWrapper = document.querySelector(boxForCards),
@@ -127,15 +127,15 @@ function cards({
             if (itemsBoxes.length > 1 && itemsBoxes) {
                 left.style.transition = '1s all';
                 right.style.transition = '1s all';
-        
+
                 let positionNum = 0;
-    
+
                 moveTo(additionalWrapper, positionNum, itemWidth);
-        
+
                 mainWrapper.addEventListener('mousedown', (event) => {
                     if (event.target && event.target.parentElement.classList
                         .contains(slidersSelector.replace(/\./, ''))) {
-        
+
                         if (event.target.parentElement.classList.contains(sliderLeft.replace(/\./, ''))) {
                             positionNum = moveLeft(positionNum, itemsBoxes, additionalWrapper, itemWidth);
                         } else {
@@ -147,7 +147,7 @@ function cards({
                 left.style.visibility = 'hidden';
                 right.style.visibility = 'hidden';
             }
-    
+
         }
 }
 

@@ -178,7 +178,7 @@ function navigation() {
 
         // hideContent(gallary);
 
-        axios.get(url)
+        axios.get(url, {mode: 'cors'})
         .then(response => {
             response.data.forEach(
                 ({img,
