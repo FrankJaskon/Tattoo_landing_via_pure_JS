@@ -186,7 +186,7 @@ function navigation() {
             }) => {
                 imgesWrapper.innerHTML += `
                 <div class="gallary__photo_box add__cursor_pointer">
-                    <img src="/img/icons/zoom-img.png"
+                    <img src="img/icons/zoom-img.png"
                          class="gallary__zoom_img contain add__absolute visibility__hidden">
                     <img src=${img} alt="${altImg}" class="gallary__img cover">
                 </div>
