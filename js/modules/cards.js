@@ -28,13 +28,13 @@ function cards({
 
                 if (this.checkingImgOrder === 'right' || this.checkingImgOrder === 'left') {
                     newCard.style.cssText = `
-                        width: 470px;
+                        width: 33.57rem;
                         display: flex;
                         flex-direction: row;
                     `;
                 } else if (this.checkingImgOrder === 'top' || this.checkingImgOrder === 'bottom') {
                     newCard.style.cssText = `
-                        width: 270px;
+                        width: 19.286rem;
                     `;
                     newCard.classList.add('card-vertical');
                 }
@@ -94,8 +94,8 @@ function cards({
                     wrapperForCard.append(innerBox);
                 }
                 wrapperForCard.style.width =
-                    window.getComputedStyle(wrapperForCard.querySelector(containerForThreeCards))
-                    .width.replace(/px||em||rm/, '') * count;
+                    (window.getComputedStyle(wrapperForCard.querySelector(containerForThreeCards))
+                    .width.replace(/px||em||rm/, '') - 15) * count;
 
                 wrapperForCard.style.transition = '1.5s all';
 
