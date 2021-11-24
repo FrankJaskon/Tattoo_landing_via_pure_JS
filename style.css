@@ -1799,6 +1799,7 @@ button {
     bottom: 0;
 
     min-width: 850px;
+    width: 100%;
 
     background: #111;
 
