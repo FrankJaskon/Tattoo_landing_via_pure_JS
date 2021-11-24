@@ -20,6 +20,12 @@ html {
     background: #201510;
 }
 
+@media (pointer:coarse) {
+    html {
+        width: 100vw;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     html {
         font-size: 12px;
