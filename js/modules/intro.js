@@ -103,8 +103,8 @@ function intro({
             let intervalOfAutoGallary = setTimeout(function showNextImg() {
                 next = moveRight(next, icons, images, width, previousPosition, addActiveStatus);
                 previousPosition = next;
-                intervalOfAutoGallary = setTimeout(showNextImg, 7000);
-            }, 7000);
+                intervalOfAutoGallary = setTimeout(showNextImg, 5000);
+            }, 5000);
 
             window.addEventListener('visibilitychange', () => {
                 if (document.visibilityState === 'hidden') {
