@@ -1,7 +1,7 @@
 function timer() {
     //Timer
 
-    const deadline = new Date('2022-08-01');
+    const deadline = new Date('2023-03-01');
 
     function getDifferenceOfTime(endTime) {
         const differenceOfTime = Date.parse(endTime) - Date.parse(new Date()),
